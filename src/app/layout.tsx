@@ -1,6 +1,9 @@
+'use client'
 import NavigationBar from "@/components/NavigationBar";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { useEffect } from "react";
+import Error from "./error";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +19,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<header>
+			<body className={inter.className}>
 				<NavigationBar />
-			</header>
-			{/* <body className={inter.className}>{children}</body> */}
+				{children}
+			</body>
 		</html>
 	);
 }
