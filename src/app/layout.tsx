@@ -1,11 +1,8 @@
-'use client'
 import NavigationBar from "@/components/NavigationBar";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { useEffect } from "react";
-import Error from "./error";
+import { Pacifico } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const pacifico = Pacifico({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
 	title: "Wedding page",
@@ -19,7 +16,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={pacifico.className}>
 				<NavigationBar />
 				{children}
 			</body>
