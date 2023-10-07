@@ -1,9 +1,9 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import './animated-border.css';
+"use client";
+import React, { useEffect, useState } from "react";
+import "./animated-border.css";
 
 const Countdown = () => {
-  const targetDate = new Date('2023-12-31T23:59:59').getTime();
+  const targetDate = new Date("2023-12-31T23:59:59").getTime();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -15,8 +15,12 @@ const Countdown = () => {
       const timeLeft = targetDate - now;
 
       const calculatedDays = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const calculatedHours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const calculatedMinutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const calculatedHours = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const calculatedMinutes = Math.floor(
+        (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+      );
       const calculatedSeconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
       setDays(calculatedDays);
@@ -32,28 +36,52 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="grid grid-flow-col gap-20 text-center auto-cols-max">
-      <div className="flex flex-col p-16 rounded-box animated-border">
-        <span className="countdown text-6xl">
-          <span style={{ '--value': days < 10 ? '0' + days : days } as React.CSSProperties}></span>
+    <div className="grid grid-flow-col gap-10 text-center auto-cols-max">
+      <div className="flex flex-col p-4 rounded-box animated-border">
+        <span className="countdown text-xl">
+          <span
+            style={
+              {
+                "--value": days < 10 ? "0" + days : days,
+              } as React.CSSProperties
+            }
+          ></span>
         </span>
         days
       </div>
-      <div className="flex flex-col p-16 rounded-box animated-border">
-        <span className="countdown text-6xl">
-          <span style={{ '--value': hours < 10 ? '0' + hours : hours } as React.CSSProperties}></span>
+      <div className="flex flex-col p-4 rounded-box animated-border">
+        <span className="countdown text-xl">
+          <span
+            style={
+              {
+                "--value": hours < 10 ? "0" + hours : hours,
+              } as React.CSSProperties
+            }
+          ></span>
         </span>
         hours
       </div>
-      <div className="flex flex-col p-16 rounded-box animated-border">
-        <span className="countdown text-6xl">
-          <span style={{ '--value': minutes < 10 ? '0' + minutes : minutes } as React.CSSProperties}></span>
+      <div className="flex flex-col p-4 rounded-box animated-border">
+        <span className="countdown text-xl">
+          <span
+            style={
+              {
+                "--value": minutes < 10 ? "0" + minutes : minutes,
+              } as React.CSSProperties
+            }
+          ></span>
         </span>
         min
       </div>
-      <div className="flex flex-col p-16 rounded-box animated-border">
-        <span className="countdown text-6xl">
-          <span style={{ '--value': seconds < 10 ? '0' + seconds : seconds } as React.CSSProperties}></span>
+      <div className="flex flex-col p-4 rounded-box animated-border">
+        <span className="countdown text-xl">
+          <span
+            style={
+              {
+                "--value": seconds < 10 ? "0" + seconds : seconds,
+              } as React.CSSProperties
+            }
+          ></span>
         </span>
         sec
       </div>

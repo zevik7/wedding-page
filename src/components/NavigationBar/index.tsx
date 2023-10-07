@@ -31,8 +31,8 @@ const NavigationBar = () => {
 
   return (
     <div className="navbar bg-base-100">
-      <div className="navbar-start">
-        <div className="dropdown">
+      <div className="navbar-center">
+        <div className="dropdown z-10">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,15 +56,11 @@ const NavigationBar = () => {
             {menuItems.map((item) => renderMenuItem(item))}
           </ul>
         </div>
-        <Logo />
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex m-auto">
         <ul className="menu menu-horizontal px-1">
           {menuItems.map((item) => renderMenuItem(item))}
         </ul>
-      </div>
-      <div className="navbar-end">
-        <ThemeSelector />
       </div>
     </div>
   );
