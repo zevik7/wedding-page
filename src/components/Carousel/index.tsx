@@ -28,7 +28,7 @@ function Carousel() {
     <div className="carousel w-full">
       <>
         <Swiper
-          className=" w-full h-[90vh]"
+          className="w-full h-[90vh]"
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}

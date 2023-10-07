@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export type Props = {
   children: React.ReactNode;
@@ -9,14 +9,15 @@ export type Props = {
 const Section = (props: Props) => {
   return (
     <div className="hero">
-      <div className="hero-content pt-10 block">
+      <div>
         <h1 className="text-4xl font-bold text text-center">{props.title}</h1>
-        <p className="m-4 text-base text text-center italic">{props.subTitle}</p>
+        <p className="m-4 text-base text text-center italic">
+          {props.subTitle}
+        </p>
         {props.children}
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Section
+export default Section;
