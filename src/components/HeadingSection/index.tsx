@@ -26,7 +26,7 @@ const HeadingSection = () => {
         />
       </div>
 
-      <h1 className="text-2xl font-bold text-center p-4 text-primary">
+      <h1 className="text-3xl font-bold text-center p-4 text-primary">
         THIÊN PHÚ & PHƯƠNG VY
       </h1>
       <p className="m-4 text-xl text text-center italic">December 24, 2023</p>
