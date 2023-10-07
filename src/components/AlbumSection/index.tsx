@@ -30,9 +30,8 @@ export default function App() {
       <BackgroundMusic />
       {/* <ImageGallery /> */}
       <PhotoAlbum
-        layout="rows"
+        layout="masonry"
         photos={slides}
-        targetRowHeight={150}
         onClick={({ index: current }) => setIndex(current)}
       />
       <Lightbox
