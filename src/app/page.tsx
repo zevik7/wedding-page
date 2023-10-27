@@ -3,14 +3,16 @@ import Carousel from '@/components/Carousel';
 import Section from '@/components/Section';
 import StorySection from '@/components/StorySection';
 import WeddingSection from '@/components/WeddingSection';
+import WishSection from '@/components/WishSection';
 import Image from 'next/image';
 
-export default function Home() {
+export default function page() {
   return (
-    <main className="min-h-screen bg-base-100">
+    <main className="bg-base-100">
       <Carousel />
       <StorySection />
       <AlbumSection />
+      <WishSection />
     </main>
   );
 }

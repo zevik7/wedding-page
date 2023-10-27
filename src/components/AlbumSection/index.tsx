@@ -2,20 +2,19 @@
 import * as React from 'react';
 import PhotoAlbum from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
-import slides from './slides';
-import ImageGallery from './images';
 import BackgroundMusic from '../BackgroundMusicButton';
+import OptimalImage from '../OptimalImage';
+import photos from './photos';
 
-const images: string[] = [
-  'KTIU3786',
-  'KTIU3457 BIA ',
-  'KTIU3476',
-  'KTIU3269',
-  'KTIU3232',
-];
+// Plugins
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
+import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
-export default function App() {
+export default function AlbumSection() {
   const [index, setIndex] = React.useState(-1);
 
   return (
@@ -28,17 +27,19 @@ export default function App() {
       </p>
 
       <BackgroundMusic />
-      {/* <ImageGallery /> */}
       <PhotoAlbum
         layout="masonry"
-        photos={slides}
+        photos={photos}
+        renderPhoto={OptimalImage}
+        sizes={{ size: '100vw' }}
         onClick={({ index: current }) => setIndex(current)}
       />
       <Lightbox
         index={index}
-        slides={slides}
+        slides={photos}
         open={index >= 0}
         close={() => setIndex(-1)}
+        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
       />
     </div>
   );
