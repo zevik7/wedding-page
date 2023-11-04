@@ -1,11 +1,10 @@
-"use client";
-import React from "react";
-import Calendar from "../Calendar";
-import Section from "../Section";
-import Map from "../GoogleMap";
-import Countdown from "../Countdown";
-import PrimaryWrapper from "../PrimaryWrapper";
-import Image from "next/image";
+'use client';
+import React from 'react';
+import Calendar from '../Calendar';
+import Section from '../Section';
+import Countdown from '../Countdown';
+import PrimaryWrapper from '../PrimaryWrapper';
+import Image from 'next/image';
 
 const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -22,15 +21,15 @@ const shimmer = (w: number, h: number) => `
 </svg>`;
 
 const toBase64 = (str: string) =>
-  typeof window === "undefined"
-    ? Buffer.from(str).toString("base64")
+  typeof window === 'undefined'
+    ? Buffer.from(str).toString('base64')
     : window.btoa(str);
 
 const WeddingSection = () => {
   return (
     <Section
-      title={"Lễ cưới"}
-      subTitle={"Đánh dấu nơi chúng tôi bắt đầu hành trình mới."}
+      title={'Lễ cưới'}
+      subTitle={'Đánh dấu nơi chúng tôi bắt đầu hành trình mới.'}
     >
       <div className="p-5 flex justify-center">
         <Countdown />

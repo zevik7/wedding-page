@@ -1,12 +1,11 @@
-"use client";
-import React from "react";
-import Calendar from "../Calendar";
-import Section from "../Section";
-import Map from "../GoogleMap";
-import Countdown from "../Countdown";
-import PrimaryWrapper from "../PrimaryWrapper";
-import Image from "next/image";
-import { shimmer, toBase64 } from "@/utils";
+'use client';
+import React from 'react';
+import Calendar from '../Calendar';
+import Section from '../Section';
+import Countdown from '../Countdown';
+import PrimaryWrapper from '../PrimaryWrapper';
+import Image from 'next/image';
+import { shimmer, toBase64 } from '@/utils';
 
 const HeadingSection = () => {
   return (

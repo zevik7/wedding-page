@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { OptionHTMLAttributes, useEffect } from "react";
-import { themeChange } from "theme-change";
-import Logo from "../Logo";
-import Select from "../Select";
-import ThemeSelector from "../ThemeSelector";
+import React, { OptionHTMLAttributes, useEffect } from 'react';
+import { themeChange } from 'theme-change';
+import Logo from '../Logo';
+import Select from '../Select';
+import ThemeSelector from '../ThemeSelector';
 
 type MenuItem = {
   label: string;
@@ -12,12 +12,12 @@ type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-  { label: "Lễ cưới", url: "" },
-  { label: "Cặp đôi", url: "" },
-  { label: "Hành trình", url: "" },
-  { label: "Ảnh cưới", url: "" },
-  { label: "Sự kiện", url: "" },
-  { label: "Lời chúc", url: "" },
+  { label: 'Lễ cưới', url: '' },
+  { label: 'Cặp đôi', url: '' },
+  { label: 'Hành trình', url: '' },
+  { label: 'Ảnh cưới', url: '' },
+  { label: 'Sự kiện', url: '' },
+  { label: 'Lời chúc', url: '' },
 ];
 
 const NavigationBar = () => {
@@ -62,6 +62,7 @@ const NavigationBar = () => {
           {menuItems.map((item) => renderMenuItem(item))}
         </ul>
       </div>
+      <ThemeSelector />
     </div>
   );
 };
