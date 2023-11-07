@@ -13,8 +13,32 @@ const shimmer = (w: number, h: number) => `
 </svg>`;
 
 const toBase64 = (str: string) =>
-  typeof window === "undefined"
-    ? Buffer.from(str).toString("base64")
+  typeof window === 'undefined'
+    ? Buffer.from(str).toString('base64')
     : window.btoa(str);
 
-export { shimmer, toBase64 };
+const formatUnixTimestamp = (
+  timestamp: number,
+  formatString = 'yyyy-MM-ddTHH:mm:ss'
+) => {
+  const dateJS = new Date(timestamp * 1000);
+
+  const year = String(dateJS.getFullYear());
+  const month = String(dateJS.getMonth() + 1).padStart(2, '0');
+  const day = String(dateJS.getDate()).padStart(2, '0');
+  const hours = String(dateJS.getHours()).padStart(2, '0');
+  const minutes = String(dateJS.getMinutes()).padStart(2, '0');
+  const seconds = String(dateJS.getSeconds()).padStart(2, '0');
+
+  let formattedDate = formatString
+    .replace('yyyy', year)
+    .replace('MM', month)
+    .replace('dd', day)
+    .replace('HH', hours)
+    .replace('mm', minutes)
+    .replace('ss', seconds);
+
+  return formattedDate;
+};
+
+export { shimmer, toBase64, formatUnixTimestamp };
