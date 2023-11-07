@@ -14,8 +14,16 @@ import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 
 import { shimmer, toBase64 } from '@/utils';
+import OptimalImage from '../OptimalImage';
+import Lightbox from 'yet-another-react-lightbox';
+import { Photo } from 'react-photo-album';
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
+import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import carouselImages from './carouselImages';
 
-const images: string[] = [
+const selectedImages: string[] = [
   'KTIU3786',
   'KTIU3457 BIA ',
   'KTIU3476',
@@ -27,11 +35,11 @@ function Carousel() {
   return (
     <div className="w-full">
       <Swiper
-        className="w-full h-[90vh]"
+        className="w-full h-[50vh] lg:h-[80vh] md:h-[70vh] sm:h-[60vh]"
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={1.5}
+        slidesPerView={1.2}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -44,23 +52,16 @@ function Carousel() {
         loop={true}
         autoplay={{
           delay: 1000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
       >
-        {images.map((image) => (
-          <SwiperSlide key={image}>
-            <Image
-              fill
-              priority
+        {selectedImages.map((selectedImage: string, idx: number) => (
+          <SwiperSlide key={selectedImage} className="bg-slate-200">
+            <OptimalImage
               alt="Main carousel image"
-              src={`/images/file/${image}.jpg`}
-              style={{ objectFit: 'contain' }}
-              quality={100}
-              placeholder="blur"
-              blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                shimmer(700, 475)
-              )}`}
-              sizes="100vw"
+              src={'/images/file/' + selectedImage + '.JPG'}
+              quality={85}
+              sizes="75vw"
             />
           </SwiperSlide>
         ))}

@@ -1,5 +1,5 @@
 .animated-border {
-  display: "flex";
+  display: 'flex';
   align-items: center;
   justify-content: center;
   width: 70px;
@@ -13,7 +13,7 @@
 }
 
 .animated-border:before {
-  content: "";
+  content: '';
   position: absolute;
   inset: -4px;
   padding: 3px;
@@ -33,7 +33,7 @@
 }
 
 .animated-border:after {
-  content: "";
+  content: '';
   position: absolute;
   inset: -50px;
   background: radial-gradient(50px at left 150px top 100px, #4982dd 100%, #0000),
@@ -54,5 +54,26 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Media query for smaller devices */
+@media (max-width: theme('screens.sm')) {
+  .animated-border {
+    width: 50px; /* Adjusted width for smaller devices */
+    height: 50px; /* Adjusted height for smaller devices */
+    max-width: 100%; /* Ensures it doesn't overflow its container */
+  }
+
+  .animated-border:before {
+    inset: -2px; /* Adjusted for smaller devices */
+    padding: 2px; /* Adjusted for smaller devices */
+  }
+
+  .animated-border:after {
+    inset: -25px; /* Adjusted for smaller devices */
+    filter: blur(15px); /* Adjusted for smaller devices */
+    background: radial-gradient(25px at left 75px top 50px, #4982dd 100%, #0000),
+      radial-gradient(25px at right 75px bottom 50px, #f26e5a 100%, #0000);
   }
 }

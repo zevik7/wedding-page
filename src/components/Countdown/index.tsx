@@ -1,9 +1,9 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import "./animated-border.css";
+'use client';
+import React, { memo, useEffect, useState } from 'react';
+import './animated-border.css';
 
 const Countdown = () => {
-  const targetDate = new Date("2023-12-31T23:59:59").getTime();
+  const targetDate = new Date('2023-12-31T23:59:59').getTime();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -35,58 +35,61 @@ const Countdown = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const textNumStyle = ` text-small sm:text-base md:text-xl`;
+  const textStringStyle = ` text-xs sm:text-sm md:text-base`;
+
   return (
-    <div className="grid grid-flow-col gap-10 text-center auto-cols-max">
+    <div className="grid grid-flow-col gap-5 sm:gap-10 text-center auto-cols-max">
       <div className="flex flex-col p-4 rounded-box animated-border">
-        <span className="countdown text-xl">
+        <span className="countdown ">
           <span
             style={
               {
-                "--value": days < 10 ? "0" + days : days,
+                '--value': days < 10 ? '0' + days : days,
               } as React.CSSProperties
             }
           ></span>
         </span>
-        days
+        <span className={textStringStyle}>ngày</span>
       </div>
       <div className="flex flex-col p-4 rounded-box animated-border">
-        <span className="countdown text-xl">
+        <span className={'countdown' + textNumStyle}>
           <span
             style={
               {
-                "--value": hours < 10 ? "0" + hours : hours,
+                '--value': hours < 10 ? '0' + hours : hours,
               } as React.CSSProperties
             }
           ></span>
         </span>
-        hours
+        <span className={textStringStyle}>giờ</span>
       </div>
       <div className="flex flex-col p-4 rounded-box animated-border">
-        <span className="countdown text-xl">
+        <span className={'countdown' + textNumStyle}>
           <span
             style={
               {
-                "--value": minutes < 10 ? "0" + minutes : minutes,
+                '--value': minutes < 10 ? '0' + minutes : minutes,
               } as React.CSSProperties
             }
           ></span>
         </span>
-        min
+        <span className={textStringStyle}>phút</span>
       </div>
       <div className="flex flex-col p-4 rounded-box animated-border">
-        <span className="countdown text-xl">
+        <span className={'countdown' + textNumStyle}>
           <span
             style={
               {
-                "--value": seconds < 10 ? "0" + seconds : seconds,
+                '--value': seconds < 10 ? '0' + seconds : seconds,
               } as React.CSSProperties
             }
           ></span>
         </span>
-        sec
+        <span className={textStringStyle}>giây</span>
       </div>
     </div>
   );
 };
 
-export default Countdown;
+export default memo(Countdown);

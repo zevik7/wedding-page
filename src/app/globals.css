@@ -6,7 +6,7 @@
 /* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: #1c4e80 transparent;
+  scrollbar-color: #7c909a white;
 }
 
 /* Chrome, Edge, and Safari */
@@ -15,11 +15,11 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: white;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #1c4e80;
+  background-color: #7c909a;
   border-radius: 16px;
   border: 4px solid white;
 }

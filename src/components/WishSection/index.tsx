@@ -4,6 +4,8 @@ import { format } from 'date-fns';
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useSWR from 'swr';
+import Section from '../Section';
+import OptimalImage from '../OptimalImage';
 
 export type Wish = {
   _id: string;
@@ -52,50 +54,57 @@ const WishSection = () => {
   };
 
   return (
-    <div className="mt-20 p-16 max-w-screen-xl m-auto">
-      <h1 className="text-4xl font-bold text text-center text-primary">
-        Lời chúc
-      </h1>
-      <p className="m-4 text-base text text-center italic">
-        Cảm ơn bạn đã dành những lời chúc tốt đẹp.
-      </p>
-      <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2">
-        <ul className="h-[50vh] overflow-y-scroll" ref={listRef}>
-          {data &&
-            data.length &&
-            data.map((wish: Wish, idx: number) => (
-              <li key={wish._id}>
-                <article
-                  className={`p-3 text-base  ${
-                    idx % 2 === 0 ? 'bg-slate-200' : 'bg-white'
-                  } `}
-                >
-                  <div className="flex justify-between items-center mb-2">
-                    <div className="flex items-center">
-                      <p className="inline-flex items-center mr-3 text-base text-primary font-semibold">
-                        {wish.userName}
-                      </p>
-                      {wish.created_at && (
-                        <p className="text-sm text-gray-400">
-                          <time dateTime={wish.created_at}>
-                            {format(
-                              new Date(wish.created_at),
-                              'HH:mm dd/MM/yyyy'
-                            )}
-                          </time>
+    <Section
+      title={' Lời chúc'}
+      subTitle="Cảm ơn bạn đã dành những lời chúc tốt đẹp."
+    >
+      <OptimalImage
+        fill
+        alt="Background image"
+        src={`/images/avb/My New Project_04.jpg`}
+        quality={70}
+        className="object-cover"
+        sizes="100vw"
+      />
+      <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 relative max-w-screen-lg m-auto ">
+        <div className="border-secondary border-2 rounded-xl p-2">
+          <ul className="h-[60vh] overflow-y-scroll" ref={listRef}>
+            {data &&
+              data.length &&
+              data.map((wish: Wish, idx: number) => (
+                <li key={wish._id}>
+                  <article
+                    className={`p-3 text-base ${
+                      idx % 2 === 0 ? 'bg-slate-100' : 'bg-slate-200'
+                    } `}
+                  >
+                    <div className="flex justify-between items-center mb-2">
+                      <div className="flex items-center">
+                        <p className="inline-flex items-center mr-3 text-base text-primary font-semibold">
+                          {wish.userName}
                         </p>
-                      )}
+                        {wish.created_at && (
+                          <p className="text-sm text-gray-400">
+                            <time dateTime={wish.created_at}>
+                              {format(
+                                new Date(wish.created_at),
+                                'HH:mm dd/MM/yyyy'
+                              )}
+                            </time>
+                          </p>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <p className="text-sm">{wish.comment}</p>
-                </article>
-              </li>
-            ))}
-        </ul>
+                    <p className="text-sm">{wish.comment}</p>
+                  </article>
+                </li>
+              ))}
+          </ul>
+        </div>
 
         <form
           action=""
-          className="sm-5 sm:p-10 mt-5 sm:mt-0 flex-col items-end"
+          className=" mt-5 sm:mt-0 flex-col items-end pt-0"
           onSubmit={handleSubmit(submitForm)}
         >
           <div className="mb-6">
@@ -146,7 +155,7 @@ const WishSection = () => {
           </div>
         </form>
       </div>
-    </div>
+    </Section>
   );
 };
 

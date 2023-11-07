@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { TbArrowBigUpLine } from 'react-icons/tb';
 
 function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,8 +35,13 @@ function ScrollToTopButton() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
-      <button onClick={scrollToTop}>Scroll to Top</button>
+    <div className="fixed bottom-5 right-5 z-10">
+      <button
+        onClick={scrollToTop}
+        className="p-2 bg-white rounded-full border-primary border-[1] outline-none"
+      >
+        <TbArrowBigUpLine className="text-primary" />
+      </button>
     </div>
   );
 }

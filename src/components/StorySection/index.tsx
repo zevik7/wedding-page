@@ -26,6 +26,8 @@ import { shimmer, toBase64 } from '@/utils';
 import './style.css';
 
 import { IoChevronUp, IoChevronDown } from 'react-icons/io5';
+import OptimalImage from '../OptimalImage';
+import Section from '../Section';
 
 const images: string[] = [
   'KTIU4125 13.18 ',
@@ -38,17 +40,14 @@ const images: string[] = [
 
 function StorySection() {
   return (
-    <div className="mt-20 bg-slate-200 p-16">
-      <h1 className="text-4xl font-bold text text-center text-primary">
-        Hành trình
-      </h1>
-      <p className="m-4 text-base text text-center italic">
-        Cuộc hành trình ngàn dặm bắt đầu bằng một bước.
-      </p>
-      <div className="relative">
+    <Section
+      title={'Hành trình'}
+      subTitle="Cuộc hành trình ngàn dặm bắt đầu bằng một bước."
+      className="bg-white"
+    >
+      <div className="relative max-w-screen-lg m-auto">
         <Swiper
-          className="max-w-screen-xl h-[75vh]"
-          slidesPerView={'auto'}
+          slidesPerView={1}
           spaceBetween={30}
           direction={'vertical'}
           pagination={{
@@ -62,71 +61,50 @@ function StorySection() {
             prevEl: '.button-prev',
             nextEl: '.button-next',
           }}
+          className="w-full h-[90vh]"
         >
           {images.map((image, idx: number) => (
             <SwiperSlide key={image}>
               <div
-                className={`h-full flex items-center ${
-                  idx % 2 === 1 ? 'flex-row-reverse' : ''
-                }`}
+                className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 h-full`}
               >
-                <div className="h-full w-1/2 relative">
-                  <Image
-                    fill
+                <div className="relative grow">
+                  <OptimalImage
                     alt="Main carousel image"
                     src={`/images/13.18/${image}.jpg`}
-                    style={{ objectFit: 'contain' }}
                     quality={100}
-                    placeholder="blur"
-                    blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                      shimmer(700, 475)
-                    )}`}
-                    sizes="100vw"
-                    className="rounded-lg"
+                    sizes="30vw"
+                    className="object-contain rounded-lg"
                   />
                 </div>
 
-                <div className="h-full w-1/2 flex flex-col justify-center p-8">
-                  <h1
-                    className={`text-3xl  ${idx % 2 === 1 ? 'text-right' : ''}`}
-                  >
-                    February 06, 2014
-                  </h1>
-                  <p
-                    className={`text-base mt-6 ${
-                      idx % 2 === 1 ? 'text-right' : ''
-                    }`}
-                  >
+                <div className="p-4 grow-0 flex flex-col justify-center">
+                  <h1 className={`text-xl `}>February 06, 2014</h1>
+                  <p className={` overflow-hidden text-base mt-4`}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Proin eget mauris scelerisque, rhoncus mauris tincidunt,
                     tincidunt sapien. Aliquam erat volutpat. Mauris nec molestie
                     dui, vel vulputate dolor. Vestibulum ut consectetur ante, a
                     finibus ipsum. Etiam congue eleifend turpis non luctus.
                     Suspendisse potenti. Mauris a elit a velit tincidunt
-                    volutpat. Vivamus laoreet augue non risus aliquet venenatis.
-                    Nulla mattis quam non mauris pretium pellentesque. Cras
-                    tincidunt lorem eu dui convallis faucibus. Phasellus id
-                    libero nec turpis molestie vulputate. Etiam dolor justo,
-                    luctus lobortis ornare sit amet, feugiat ut neque. Phasellus
-                    blandit ante tortor, ut venenatis nunc imperdiet
-                    consectetur.
+                    volutpat.
                   </p>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="absolute bottom-0 right-0 z-50 flex flex-col opacity-50 hover:opacity-100">
-          <button className="flex justify-center button-prev p-3 text-primary bg-base-100  rounded-full">
+        <div className="absolute bottom-1/2 translate-y-1/2 right-0 sm:-right-7 z-50 flex flex-col">
+          <button className="flex justify-center button-prev p-3 text-primary bg-base-100 rounded-full">
             <IoChevronUp />
           </button>
-          <p className="paginationFraction text-xl"></p>
+          <p className="paginationFraction text mt-4 mb-4"></p>
           <button className="flex justify-center button-next p-3 text-primary bg-base-100 rounded-full">
             <IoChevronDown />
           </button>
         </div>
       </div>
-    </div>
+    </Section>
   );
 }
 

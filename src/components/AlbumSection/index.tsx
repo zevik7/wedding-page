@@ -3,7 +3,7 @@ import * as React from 'react';
 import PhotoAlbum from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 import BackgroundMusic from '../BackgroundMusicButton';
-import OptimalImage from '../OptimalImage';
+import PhotoAlbumImage from '../PhotoAlbumImage';
 import photos from './photos';
 
 // Plugins
@@ -26,11 +26,10 @@ export default function AlbumSection() {
         Nơi lưu giữ những kỷ niệm.
       </p>
 
-      <BackgroundMusic />
       <PhotoAlbum
         layout="masonry"
         photos={photos}
-        renderPhoto={OptimalImage}
+        renderPhoto={PhotoAlbumImage}
         sizes={{ size: '100vw' }}
         onClick={({ index: current }) => setIndex(current)}
       />
