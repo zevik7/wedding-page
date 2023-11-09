@@ -53,20 +53,28 @@ const WishSection = () => {
 
   return (
     <Section
-      title={' Lời chúc'}
+      title={'Lời chúc'}
       subTitle="Cảm ơn bạn đã dành những lời chúc tốt đẹp."
+      titleStyle="text-white drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,1)]"
+      subTitleStyle="text-white drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,1)]"
     >
       <OptimalImage
         fill
         alt="Background image"
-        src={`/images/avb/My New Project_04.jpg`}
+        src={`/images/file/KTIU3344.jpg`}
         quality={70}
-        className="object-cover"
+        className="object-cover -scale-x-100 opacity-80"
         sizes="100vw"
       />
       <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 relative max-w-screen-lg m-auto ">
-        <div className="border-secondary border-2 rounded-xl p-2">
-          <ul className="h-[60vh] overflow-y-scroll" ref={listRef}>
+        <div className="border-white border-double border-2 rounded-xl p-2">
+          <ul
+            className="h-[40vh] sm:h-[60vh] overflow-y-scroll"
+            ref={listRef}
+            style={{
+              scrollbarColor: 'revert-layer',
+            }}
+          >
             {data &&
               data.length &&
               data.map((wish: Wish, idx: number) => (
@@ -146,7 +154,7 @@ const WishSection = () => {
           <div className="mb-6 flex justify-end">
             <button
               type="submit"
-              className="py-3 px-8 bg-primary text-green-100 font-bold rounded"
+              className="py-3 px-8 bg-red-400 text-green-100 font-bold rounded"
             >
               Gửi
             </button>

@@ -12,7 +12,6 @@ type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-  { label: 'Lễ cưới', url: '' },
   { label: 'Cặp đôi', url: '' },
   { label: 'Hành trình', url: '' },
   { label: 'Ảnh cưới', url: '' },

@@ -4,6 +4,7 @@ import { Merienda } from 'next/font/google';
 import HeadingSection from '@/components/HeadingSection';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import BackgroundMusicButton from '@/components/BackgroundMusicButton';
+import SnowFallBackground from '@/components/SnowFallBackground';
 
 const font = Merienda({
   subsets: ['vietnamese'],
@@ -30,6 +31,7 @@ export default function RootLayout({
         {children}
         <ScrollToTopButton />
         <BackgroundMusicButton />
+        <SnowFallBackground />
       </body>
     </html>
   );

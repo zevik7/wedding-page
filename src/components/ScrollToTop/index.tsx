@@ -10,7 +10,7 @@ function ScrollToTopButton() {
   useEffect(() => {
     // Add a scroll event listener to track the user's scroll position
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 200) {
         // Show the "Scroll to Top" button when the user scrolls down 100px or more
         setIsVisible(true);
       } else {
@@ -35,14 +35,12 @@ function ScrollToTopButton() {
     });
   };
 
-  if (!isVisible) return null;
-
   return (
     <motion.div
       initial={{ y: -100, opacity: 0 }}
       animate={{
-        y: 0,
-        opacity: 1,
+        y: isVisible ? 0 : -100,
+        opacity: isVisible ? 1 : 0,
       }}
       className={`fixed bottom-5 right-5 z-50`}
     >
