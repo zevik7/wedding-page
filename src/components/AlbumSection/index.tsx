@@ -13,23 +13,20 @@ import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
+import Section from '../Section';
+import OptimalImage from '../OptimalImage';
 
-export default function AlbumSection() {
+const AlbumSection = () => {
   const [index, setIndex] = React.useState(-1);
 
   return (
-    <div className="mt-20 p-16">
-      <h1 className="text-4xl font-bold text text-center text-primary">
-        Ảnh cưới
-      </h1>
-      <p className="m-4 text-base text text-center italic">
-        Nơi lưu giữ những kỷ niệm.
-      </p>
-
+    <Section title=" Ảnh cưới" subTitle="Nơi lưu giữ những kỷ niệm.">
       <PhotoAlbum
         layout="masonry"
         photos={photos}
-        renderPhoto={PhotoAlbumImage}
+        renderPhoto={(photo) => (
+          <PhotoAlbumImage key={photo.imageProps.src} {...photo} />
+        )}
         sizes={{ size: '100vw' }}
         onClick={({ index: current }) => setIndex(current)}
       />
@@ -39,7 +36,28 @@ export default function AlbumSection() {
         open={index >= 0}
         close={() => setIndex(-1)}
         plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+        render={{
+          slide: ({ slide }) => (
+            <OptimalImage
+              key={slide.src}
+              src={slide.src}
+              alt="Detail image"
+              sizes="80vw"
+              priority={true}
+            />
+          ),
+          thumbnail: ({ slide }) => (
+            <OptimalImage
+              key={slide.src}
+              src={slide.src}
+              alt="Thumbnail image"
+              sizes="20vw"
+            />
+          ),
+        }}
       />
-    </div>
+    </Section>
   );
-}
+};
+
+export default React.memo(AlbumSection);

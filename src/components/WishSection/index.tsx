@@ -63,7 +63,7 @@ const WishSection = () => {
         alt="Background image"
         src={`/images/file/KTIU3344.jpg`}
         quality={70}
-        className="object-cover -scale-x-100 opacity-80"
+        className="object-cover -scale-x-100 opacity-90"
         sizes="100vw"
       />
       <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 relative max-w-screen-lg m-auto ">

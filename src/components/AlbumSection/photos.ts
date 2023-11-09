@@ -12,9 +12,10 @@ const imagesUrl = images.map((imagePath: string, index: number) => imagePath);
 
 const photos: Photo[] = imagesUrl.map((photo: any) => {
   return {
+    key: photo.default.src,
     src: photo.default.src,
-    width: photo.default.width / 2,
-    height: photo.default.height / 2,
+    width: photo.default.width,
+    height: photo.default.height,
   };
 });
 

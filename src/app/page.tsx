@@ -11,7 +11,7 @@ export default function page() {
     <main className="bg-base-100">
       <Carousel />
       <StorySection />
-      {/* <AlbumSection /> */}
+      <AlbumSection />
       <WishSection />
     </main>
   );

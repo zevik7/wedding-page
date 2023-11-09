@@ -74,7 +74,7 @@ function StorySection() {
         alt="Background image"
         src={`/images/bg/pexels-craig-adderley-154690.jpg`}
         quality={80}
-        className="object-cover absolute top-0 left-0 right-0 bottom-0"
+        className="object-cover absolute top-0 left-0 right-0 bottom-0 blur-sm"
         sizes="100vw"
       />
       <div className="relative max-w-screen-lg m-auto">
@@ -103,14 +103,6 @@ function StorySection() {
               <div
                 className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 h-full relative`}
               >
-                <OptimalImage
-                  fill
-                  alt="Background image"
-                  src={`/images/story/${story.imgName}.JPG`}
-                  quality={10}
-                  className="object-cover -z-50 absolute top-0 left-0 right-0 bottom-0 blur-md"
-                  sizes="50vw"
-                />
                 <div className="relative grow">
                   <OptimalImage
                     alt="Main carousel image"
@@ -123,11 +115,11 @@ function StorySection() {
 
                 <div className="p-4 grow-0 flex flex-col justify-center">
                   <h1
-                    className={`text-2xl sm:text-3xl font-bold text-primary drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,1)]`}
+                    className={`text-2xl sm:text-3xl font-bold text-primary bg-white p-4 rounded-lg text-center`}
                   >
                     {story.date}
                   </h1>
-                  <p className={`overflow-hidden text-base mt-4`}>
+                  <p className={`overflow-hidden text-base text-white mt-4`}>
                     {story.content}
                   </p>
                 </div>
@@ -136,11 +128,11 @@ function StorySection() {
           ))}
         </Swiper>
         <div className="absolute bottom-1/2 translate-y-1/2 right-5 sm:bottom-5 sm:translate-y-0  z-50 flex flex-col">
-          <button className="flex justify-center button-prev p-3 text-primary bg-white rounded-full">
+          <button className="flex justify-center button-prev p-3 text-primary bg-slate-100 rounded-full">
             <IoChevronUp className="text-primary" />
           </button>
-          <p className="paginationFraction text mt-4 mb-4"></p>
-          <button className="flex justify-center button-next p-3 text-primary bg-white rounded-full">
+          <p className="paginationFraction text-base text-white mt-4 mb-4"></p>
+          <button className="flex justify-center button-next p-3 text-primary bg-slate-100 rounded-full">
             <IoChevronDown className="text-primary" />
           </button>
         </div>
