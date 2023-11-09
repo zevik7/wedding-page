@@ -60,8 +60,8 @@
 /* Media query for smaller devices */
 @media (max-width: theme('screens.sm')) {
   .animated-border {
-    width: 50px; /* Adjusted width for smaller devices */
-    height: 50px; /* Adjusted height for smaller devices */
+    width: 40px; /* Adjusted width for smaller devices */
+    height: 40px; /* Adjusted height for smaller devices */
     max-width: 100%; /* Ensures it doesn't overflow its container */
   }
 

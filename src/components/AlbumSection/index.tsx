@@ -21,41 +21,43 @@ const AlbumSection = () => {
 
   return (
     <Section title=" Ảnh cưới" subTitle="Nơi lưu giữ những kỷ niệm.">
-      <PhotoAlbum
-        layout="masonry"
-        photos={photos}
-        renderPhoto={(photo) => (
-          <PhotoAlbumImage key={photo.imageProps.src} {...photo} />
-        )}
-        sizes={{ size: '100vw' }}
-        onClick={({ index: current }) => setIndex(current)}
-      />
-      <Lightbox
-        index={index}
-        slides={photos}
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-        render={{
-          slide: ({ slide }) => (
-            <OptimalImage
-              key={slide.src}
-              src={slide.src}
-              alt="Detail image"
-              sizes="80vw"
-              priority={true}
-            />
-          ),
-          thumbnail: ({ slide }) => (
-            <OptimalImage
-              key={slide.src}
-              src={slide.src}
-              alt="Thumbnail image"
-              sizes="20vw"
-            />
-          ),
-        }}
-      />
+      <div className="relative max-h-screen overflow-scroll">
+        <PhotoAlbum
+          layout="masonry"
+          photos={photos}
+          renderPhoto={(photo) => (
+            <PhotoAlbumImage key={photo.imageProps.src} {...photo} />
+          )}
+          sizes={{ size: '100vw' }}
+          onClick={({ index: current }) => setIndex(current)}
+        />
+        <Lightbox
+          index={index}
+          slides={photos}
+          open={index >= 0}
+          close={() => setIndex(-1)}
+          plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+          render={{
+            slide: ({ slide }) => (
+              <OptimalImage
+                key={slide.src}
+                src={slide.src}
+                alt="Detail image"
+                sizes="80vw"
+                priority={true}
+              />
+            ),
+            thumbnail: ({ slide }) => (
+              <OptimalImage
+                key={slide.src}
+                src={slide.src}
+                alt="Thumbnail image"
+                sizes="20vw"
+              />
+            ),
+          }}
+        />
+      </div>
     </Section>
   );
 };
