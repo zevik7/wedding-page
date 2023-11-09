@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { TbArrowBigUpLine } from 'react-icons/tb';
+import { motion } from 'framer-motion';
 
 function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,16 +35,25 @@ function ScrollToTopButton() {
     });
   };
 
+  if (!isVisible) return null;
+
   return (
-    <div className="fixed bottom-5 right-5 z-10">
+    <motion.div
+      initial={{ y: -100, opacity: 0 }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      className={`fixed bottom-5 right-5 z-50`}
+    >
       <button
         onClick={scrollToTop}
-        className="p-2 bg-white rounded-full border-primary border-[1] outline-none"
+        className="p-2 bg-white rounded-full shadow-sm border-2 outline-none"
       >
-        <TbArrowBigUpLine className="text-primary" />
+        <TbArrowBigUpLine className="text-secondary" />
       </button>
-    </div>
+    </motion.div>
   );
 }
 
-export default ScrollToTopButton;
+export default memo(ScrollToTopButton);

@@ -73,7 +73,7 @@ const BackgroundMusicButton = () => {
             togglePlay();
           }
         }}
-        className="p-2 bg-primary rounded-full border-base-100 outline-none"
+        className="p-2 bg-red-400 rounded-full border-base-100 outline-none"
       >
         {isLoading && <TbLoader color="#fff" />}
         {!isLoading &&
