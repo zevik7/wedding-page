@@ -21,7 +21,6 @@ import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
 import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-import carouselImages from './carouselImages';
 
 const selectedImages: string[] = [
   'KTIU3786',

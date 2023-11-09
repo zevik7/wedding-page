@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import useSWR from 'swr';
 import Section from '../Section';
 import OptimalImage from '../OptimalImage';
+import { fetcher } from '@/utils';
 
 export type Wish = {
   _id: string;
@@ -18,9 +19,6 @@ type Form = {
   userName: string;
   comment: string;
 };
-
-//@ts-ignore
-const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
 
 const WishSection = () => {
   const { data, mutate, isLoading } = useSWR<Wish[], any, any>(
