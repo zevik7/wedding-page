@@ -106,7 +106,7 @@ function StorySection() {
                 <div className="relative grow">
                   <OptimalImage
                     alt="Main carousel image"
-                    src={`/images/story/${story.imgName}.JPG`}
+                    src={`/images/story/${story.imgName}.jpg`}
                     quality={100}
                     sizes="30vw"
                     className="object-contain rounded-lg"
