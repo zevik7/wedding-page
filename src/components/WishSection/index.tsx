@@ -61,7 +61,7 @@ const WishSection = () => {
       <OptimalImage
         fill
         alt="Background image"
-        src={`/images/file/KTIU3344.jpg`}
+        src={`/images/file/KTIU3344.JPG`}
         quality={70}
         className="object-cover -scale-x-100 opacity-90"
         sizes="100vw"
