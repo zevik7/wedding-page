@@ -38,7 +38,7 @@ function Carousel() {
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={1.2}
+        slidesPerView={1.4}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -55,7 +55,7 @@ function Carousel() {
         }}
       >
         {selectedImages.map((selectedImage: string, idx: number) => (
-          <SwiperSlide key={selectedImage} className="bg-slate-200">
+          <SwiperSlide key={selectedImage} className="">
             <OptimalImage
               alt="Main carousel image"
               src={'/images/file/' + selectedImage + '.JPG'}

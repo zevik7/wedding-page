@@ -18,13 +18,28 @@ import OptimalImage from '../OptimalImage';
 
 const AlbumSection = () => {
   const [index, setIndex] = React.useState(-1);
+  const [currentPhotos, setCurrentPhotos] = React.useState(photos.slice(0, 20));
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  const handleLoadMore = () => {
+    if (currentPhotos.length === photos.length) {
+      window.scrollTo({ behavior: 'smooth', top: ref.current?.offsetTop });
+      setCurrentPhotos([...photos.slice(0, 20)]);
+      return;
+    }
+    const nextPhotos = photos.slice(
+      currentPhotos.length,
+      currentPhotos.length + 20
+    );
+    setCurrentPhotos([...currentPhotos, ...nextPhotos]);
+  };
 
   return (
     <Section title=" Ảnh cưới" subTitle="Nơi lưu giữ những kỷ niệm.">
-      <div className="relative max-h-screen overflow-scroll">
+      <div className="relative">
         <PhotoAlbum
           layout="masonry"
-          photos={photos}
+          photos={currentPhotos}
           renderPhoto={(photo) => (
             <PhotoAlbumImage key={photo.imageProps.src} {...photo} />
           )}
@@ -33,7 +48,7 @@ const AlbumSection = () => {
         />
         <Lightbox
           index={index}
-          slides={photos}
+          slides={currentPhotos}
           open={index >= 0}
           close={() => setIndex(-1)}
           plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
@@ -57,9 +72,19 @@ const AlbumSection = () => {
             ),
           }}
         />
+
+        <div className="flex justify-center p-5" ref={ref}>
+          <button
+            type="button"
+            onClick={() => handleLoadMore()}
+            className="m-auto py-3 px-8 bg-red-400 text-green-100 font-bold rounded"
+          >
+            {currentPhotos.length === photos.length ? 'Ẩn bớt' : 'Xem thêm'}
+          </button>
+        </div>
       </div>
     </Section>
   );
 };
 
-export default React.memo(AlbumSection);
+export default AlbumSection;

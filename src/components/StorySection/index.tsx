@@ -115,7 +115,7 @@ function StorySection() {
 
                 <div className="p-4 grow-0 flex flex-col justify-center">
                   <h1
-                    className={`text-2xl sm:text-3xl font-bold text-primary bg-white p-4 rounded-lg text-center`}
+                    className={`text-2xl sm:text-3xl font-bold text-primary p-4 rounded-lg text-center`}
                   >
                     {story.date}
                   </h1>
@@ -131,7 +131,7 @@ function StorySection() {
           <button className="flex justify-center button-prev p-3 text-primary bg-slate-100 rounded-full">
             <IoChevronUp className="text-primary" />
           </button>
-          <p className="paginationFraction text-base text-white mt-4 mb-4"></p>
+          <p className="paginationFraction text-base !text-white mt-4 mb-4"></p>
           <button className="flex justify-center button-next p-3 text-primary bg-slate-100 rounded-full">
             <IoChevronDown className="text-primary" />
           </button>
