@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
 
 import { shimmer, toBase64 } from '@/utils';
 import OptimalImage from '../OptimalImage';
@@ -21,6 +21,7 @@ import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
 import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import { useWindowSize } from '@/hooks';
 
 const selectedImages: string[] = [
   'KTIU3786',
@@ -31,27 +32,20 @@ const selectedImages: string[] = [
 ];
 
 function Carousel() {
+  const { width } = useWindowSize();
+
   return (
     <div className="w-full">
       <Swiper
         className="w-full h-[50vh] lg:h-[80vh] md:h-[70vh] sm:h-[60vh]"
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={1.4}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
+        slidesPerView={(width > 1024 && 1.8) || (width > 640 && 1.4) || 1}
+        centeredSlides
+        spaceBetween={20}
+        modules={[Autoplay]}
         pagination={false}
-        modules={[EffectCoverflow, Pagination]}
         loop={true}
         autoplay={{
-          delay: 1000,
-          disableOnInteraction: true,
+          delay: 2500,
         }}
       >
         {selectedImages.map((selectedImage: string, idx: number) => (

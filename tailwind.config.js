@@ -18,6 +18,17 @@ module.exports = {
       fontFamily: {
         sans: [...defaultTheme.fontFamily.sans],
       },
+      borderWidth: {
+        12: '12px',
+        16: '16px',
+        20: '20px',
+      },
+      aspectRatio: {
+        '9/16': '9 / 16',
+      },
+      aspectRatio: {
+        '3/4': '3 / 4',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
@@ -25,11 +36,11 @@ module.exports = {
     themes: [
       {
         myTheme: {
-          primary: '#F87171',
-          secondary: '#7C909A',
-          accent: '#EA6947',
-          neutral: '#23282E',
-          'base-100': '#FFFBF7',
+          primary: '#747BA9',
+          secondary: '#A9AABC',
+          accent: '#444655',
+          neutral: '#AB6D70',
+          'base-100': '#FFFFFF',
           info: '#0091D5',
           success: '#6BB187',
           warning: '#DBAE59',

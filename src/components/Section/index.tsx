@@ -14,7 +14,7 @@ const Section = (props: Props) => {
   return (
     <div
       className={
-        `bg-slate-200 px-4 py-8 sm:p-8 md:p-16 gradient-radial relative ` +
+        `bg-slate-100 px-4 py-8 sm:p-8 md:p-16 gradient-radial relative ` +
         props.className
       }
     >

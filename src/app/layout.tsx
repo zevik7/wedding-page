@@ -1,15 +1,11 @@
 import NavigationBar from '@/components/NavigationBar';
 import './globals.css';
-import { Merienda } from 'next/font/google';
+import { Merienda, Inter, Ephesis, Dosis } from 'next/font/google';
 import HeadingSection from '@/components/HeadingSection';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import BackgroundMusicButton from '@/components/BackgroundMusicButton';
 import SnowFallBackground from '@/components/SnowFallBackground';
-
-const font = Merienda({
-  subsets: ['vietnamese'],
-  weight: ['300', '400', '500', '600'],
-});
+import { merienda } from './fonts';
 
 export const metadata = {
   title: 'Wedding page',
@@ -23,11 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={`overflow-x-hidden ` + merienda.className}>
         <HeadingSection />
-        <div className="mt-14">
-          <NavigationBar />
-        </div>
         {children}
         <ScrollToTopButton />
         <BackgroundMusicButton />

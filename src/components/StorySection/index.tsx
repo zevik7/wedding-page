@@ -29,6 +29,12 @@ import { IoChevronUp, IoChevronDown } from 'react-icons/io5';
 import OptimalImage from '../OptimalImage';
 import Section from '../Section';
 import SnowFallBackground from '../SnowFallBackground';
+import TitleSection from '../TitleSection';
+import NeelaBorder from '../NeelaBorder';
+import { GiDiamondRing } from 'react-icons/gi';
+import { ephesis } from '@/app/fonts';
+import flower1 from '../../../public/images/decoration/flower-medium.svg';
+import flower2 from '../../../public/images/decoration/flower-medium2.svg';
 
 type Story = {
   date: string;
@@ -65,45 +71,26 @@ const stories: Story[] = [
 
 function StorySection() {
   return (
-    <Section
-      title={'Hành trình'}
-      subTitle="Cuộc hành trình ngàn dặm bắt đầu bằng một bước."
-      className="bg-white"
-    >
-      <OptimalImage
-        alt="Background image"
-        src={`/images/bg/pexels-craig-adderley-154690.jpg`}
-        quality={80}
-        className="object-cover absolute top-0 left-0 right-0 bottom-0 blur-sm"
-        sizes="100vw"
-      />
-      <div className="relative max-w-screen-lg m-auto">
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          direction={'vertical'}
-          pagination={{
-            type: 'fraction',
-            el: '.paginationFraction',
-          }}
-          modules={[Pagination, Navigation, Scrollbar]}
-          loop={true}
-          navigation={{
-            enabled: true,
-            prevEl: '.button-prev',
-            nextEl: '.button-next',
-          }}
-          className="w-full h-[90vh]"
-        >
+    <div>
+      <div className="relative p-14 after:content-[''] after:bg-primary after:absolute after:w-full after:h-full after:top-0 after:left-0 after:opacity-70 after:-z-10 ">
+        <TitleSection content="Hành trình" whiteIcon className="text-white" />
+        <OptimalImage
+          className="-z-10 object-cover"
+          src={'/Images/decoration/roses.jpg'}
+          alt=""
+        />
+      </div>
+      <div className="max-w-screen-lg m-auto py-20">
+        <div id="timeline" className="relative">
           {stories.map((story: Story, idx: number) => (
-            <SwiperSlide
-              key={story.date}
-              className="rounded-md overflow-hidden"
-            >
+            <div key={story.date} className="flex flex-col items-center">
+              <NeelaBorder>{story.date}</NeelaBorder>
               <div
-                className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 h-full relative`}
+                className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 items-center h-full relative py-16`}
               >
-                <div className="relative grow">
+                <div className="absolute w-[1px] bg-primary top-0 bottom-[5px] left-1/2" />
+
+                <div className="relative w-[480px] aspect-[3/4] max-w-full  z-0 sm:left-20">
                   <OptimalImage
                     alt="Main carousel image"
                     src={`/images/story/${story.imgName}.jpg`}
@@ -113,31 +100,42 @@ function StorySection() {
                   />
                 </div>
 
-                <div className="p-4 grow-0 flex flex-col justify-center">
-                  <h1
-                    className={`text-2xl sm:text-3xl font-bold text-primary p-4 rounded-lg text-center`}
-                  >
-                    {story.date}
-                  </h1>
-                  <p className={`overflow-hidden text-base text-white mt-4`}>
-                    {story.content}
-                  </p>
+                <div className="max-w-xs relative sm:left-10 justify-self-center sm:justify-self-start">
+                  <div className="bg-primary p-8 border-4 border-white">
+                    <NeelaBorder className="border-secondary">
+                      <TitleSection
+                        content="Our first met"
+                        className="text-white text-xl"
+                        whiteIcon={true}
+                      />
+                      <div className="px-2 py-4">
+                        <p className={`text-base text-white`}>
+                          {story.content}
+                        </p>
+                      </div>
+                    </NeelaBorder>
+                  </div>
+                </div>
+
+                <div className="absolute w-[211px] h-[199px] sm:w-[424px] sm:h-[398px] -left-[100px] -top-[150px] -scale-y-100 rotate-90 -z-10">
+                  <OptimalImage src={flower1} alt="" />
+                </div>
+                <div className="absolute  w-[211px] h-[199px] sm:w-[424px] sm:h-[398px]  -right-[100px] -top-[0px] -z-10">
+                  <OptimalImage src={flower2} alt="" />
                 </div>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
-        <div className="absolute bottom-1/2 translate-y-1/2 right-5 sm:bottom-5 sm:translate-y-0  z-50 flex flex-col">
-          <button className="flex justify-center button-prev p-3 text-primary bg-slate-100 rounded-full">
-            <IoChevronUp className="text-primary" />
-          </button>
-          <p className="paginationFraction text-base !text-white mt-4 mb-4"></p>
-          <button className="flex justify-center button-next p-3 text-primary bg-slate-100 rounded-full">
-            <IoChevronDown className="text-primary" />
-          </button>
+
+          <div className="flex flex-col items-center justify-center">
+            <GiDiamondRing className="text-primary text-5xl" />
+            <p className={'text-primary text-5xl ' + ephesis.className}>
+              This is where our forever begins !!!
+            </p>
+          </div>
         </div>
       </div>
-    </Section>
+    </div>
   );
 }
 
