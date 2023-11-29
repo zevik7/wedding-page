@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Calendar from '../Calendar';
 import Section from '../Section';
 import Countdown from '../Countdown';
@@ -14,7 +14,7 @@ import flowerLine from '../../../public/images/decoration/flowerLine.svg';
 
 const HeadingSection = () => {
   return (
-    <div className="relative my-10">
+    <div className="relative py-10">
       <h1 className={'text-xl text-center p-4 text-primary'}>Save the date</h1>
       <h1
         className={

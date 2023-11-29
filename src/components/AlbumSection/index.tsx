@@ -22,23 +22,27 @@ const AlbumSection = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const handleLoadMore = () => {
-    if (currentPhotos.length === photos.length) {
+    if (currentPhotos.length > photos.length) {
       window.scrollTo({ behavior: 'smooth', top: ref.current?.offsetTop });
-      setCurrentPhotos([...photos.slice(0, 20)]);
+      setCurrentPhotos(photos.slice(0, 20));
       return;
     }
+
     const nextPhotos = photos.slice(
       currentPhotos.length,
-      currentPhotos.length + 20
+      photos.length < currentPhotos.length + 20
+        ? photos.length
+        : currentPhotos.length + 20
     );
-    setCurrentPhotos([...currentPhotos, ...nextPhotos]);
+
+    setCurrentPhotos((prevPhotos) => [...prevPhotos, ...nextPhotos]);
   };
 
   return (
     <Section title=" Ảnh cưới" subTitle="Nơi lưu giữ những kỷ niệm.">
       <div className="relative">
         <PhotoAlbum
-          layout="masonry"
+          layout="columns"
           photos={currentPhotos}
           renderPhoto={(photo) => (
             <PhotoAlbumImage key={photo.imageProps.src} {...photo} />
@@ -79,7 +83,7 @@ const AlbumSection = () => {
             onClick={() => handleLoadMore()}
             className="m-auto py-3 px-8 bg-red-400 text-green-100 font-bold rounded"
           >
-            {currentPhotos.length === photos.length ? 'Ẩn bớt' : 'Xem thêm'}
+            {currentPhotos.length <= photos.length ? 'Xem thêm' : 'Ẩn bớt'}
           </button>
         </div>
       </div>

@@ -3,7 +3,7 @@ import React, { memo, useEffect, useState } from 'react';
 import './animated-border.css';
 
 const Countdown = () => {
-  const targetDate = new Date('2023-12-31T23:59:59').getTime();
+  const targetDate = new Date('2023-12-24T23:59:59').getTime();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);

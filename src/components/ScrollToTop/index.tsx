@@ -48,7 +48,7 @@ function ScrollToTopButton() {
         onClick={scrollToTop}
         className="p-2 bg-white rounded-full shadow-sm border-2 outline-none"
       >
-        <TbArrowBigUpLine className="text-secondary" />
+        <TbArrowBigUpLine className="text-primary" />
       </button>
     </motion.div>
   );

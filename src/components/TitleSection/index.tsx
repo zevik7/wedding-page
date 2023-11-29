@@ -11,7 +11,7 @@ type Props = {
 
 const TitleSection = (props: Props) => {
   return (
-    <div>
+    <>
       <h1
         className={
           'my-4 text-4xl font-bold text text-center text-primary ' +
@@ -20,10 +20,10 @@ const TitleSection = (props: Props) => {
       >
         {props.content}
       </h1>
-      <div className="relative h-6">
+      <p className="relative h-6">
         <OptimalImage src={props.whiteIcon ? titleDotWhite : titleDot} alt="" />
-      </div>
-    </div>
+      </p>
+    </>
   );
 };
 

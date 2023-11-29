@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import AlbumSection from '@/components/AlbumSection';
 import Carousel from '@/components/Carousel';
 import Footer from '@/components/Footer';

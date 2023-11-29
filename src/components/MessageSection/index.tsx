@@ -23,7 +23,7 @@ const MessageSection = () => {
           <OptimalImage src={flower2} alt="" />
         </div>
       </div>
-      <div className="max-w-screen-md m-auto text-center mb-20">
+      <div className="max-w-screen-md m-auto text-center mb-20 p-2">
         <div className="flex h-96 grid grid-cols-2 relative">
           <div className="relative border-8 border-primary sm:mr-3">
             <div className="relative border-8 border-white h-full">
@@ -31,6 +31,7 @@ const MessageSection = () => {
                 src={'/images/file/KTIU3286.JPG'}
                 alt="Bride"
                 className="object-cover"
+                sizes="30vw"
               />
             </div>
           </div>
@@ -40,6 +41,7 @@ const MessageSection = () => {
                 src={'/images/file/KTIU3649.JPG'}
                 alt="Groom"
                 className="object-cover"
+                sizes="30vw"
               />
             </div>
           </div>

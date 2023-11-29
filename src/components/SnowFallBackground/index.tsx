@@ -4,8 +4,8 @@ import React, { memo, useEffect } from 'react';
 import { gsap, Linear } from 'gsap';
 
 const SnowFallBackground = () => {
-  const MAX_SNOW = 100;
-  const MAX_SNOW_SIZE = 12;
+  const MAX_SNOW = 75;
+  const MAX_SNOW_SIZE = 10;
   const MAX_SNOW_SPEED = 2;
 
   useEffect(() => {
