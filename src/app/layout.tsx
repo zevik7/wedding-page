@@ -22,15 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`overflow-x-hidden ` + merienda.className}>
         <HeadingSection />
-        <Suspense
-          fallback={
-            <div className="text-6xl text-red-600 h-96 w-96 relative z-50">
-              Loading feed...
-            </div>
-          }
-        >
-          {children}
-        </Suspense>
+        {children}
         <ScrollToTopButton />
         <BackgroundMusicButton />
         <SnowFallBackground />

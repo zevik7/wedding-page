@@ -1,18 +1,28 @@
 import { Photo } from 'react-photo-album';
 
 function importAll(r: any) {
-  return r.keys().map(r);
+  const uniqueImages = new Set<string>();
+  return r
+    .keys()
+    .filter((path: string) => {
+      if (!uniqueImages.has(path)) {
+        uniqueImages.add(path);
+        return true;
+      }
+      return false;
+    })
+    .map(r);
 }
 
 const images = importAll(
   require.context('/public/images/file/', false, /\.(png|JPG|svg)$/)
 );
 
-const imagesUrl = images.map((imagePath: string, index: number) => imagePath);
+const imagesUrl = images.map((imagePath: string) => imagePath);
 
-const photos: Photo[] = imagesUrl.map((photo: any) => {
+const photos: Photo[] = imagesUrl.map((photo: any, idx: number) => {
   return {
-    key: photo.default.src,
+    key: idx,
     src: photo.default.src,
     width: photo.default.width,
     height: photo.default.height,

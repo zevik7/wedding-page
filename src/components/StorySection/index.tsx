@@ -81,8 +81,9 @@ function StorySection() {
         <TitleSection content="Hành trình" whiteIcon className="text-white" />
         <OptimalImage
           className="-z-10 object-cover"
-          src={'/Images/decoration/roses.jpg'}
+          src={'/images/decoration/roses.jpg'}
           alt=""
+          quality={40}
         />
       </div>
       <div className="max-w-screen-lg m-auto py-20">

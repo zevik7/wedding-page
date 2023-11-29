@@ -4,7 +4,7 @@ import PhotoAlbum from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 import BackgroundMusic from '../BackgroundMusicButton';
 import PhotoAlbumImage from '../PhotoAlbumImage';
-import photos from './photos';
+import photosLink from './photos';
 
 // Plugins
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
@@ -17,13 +17,13 @@ import Section from '../Section';
 import OptimalImage from '../OptimalImage';
 
 const AlbumSection = () => {
+  let photos = photosLink.slice(0, photosLink.length / 2);
   const [index, setIndex] = React.useState(-1);
   const [currentPhotos, setCurrentPhotos] = React.useState(photos.slice(0, 20));
   const ref = React.useRef<HTMLDivElement>(null);
 
   const handleLoadMore = () => {
-    if (currentPhotos.length > photos.length) {
-      window.scrollTo({ behavior: 'smooth', top: ref.current?.offsetTop });
+    if (currentPhotos.length >= photos.length) {
       setCurrentPhotos(photos.slice(0, 20));
       return;
     }
@@ -81,9 +81,9 @@ const AlbumSection = () => {
           <button
             type="button"
             onClick={() => handleLoadMore()}
-            className="m-auto py-3 px-8 bg-red-400 text-green-100 font-bold rounded"
+            className="m-auto py-3 px-8 bg-primary text-white font-bold"
           >
-            {currentPhotos.length <= photos.length ? 'Xem thêm' : 'Ẩn bớt'}
+            {currentPhotos.length >= photos.length ? 'Ẩn bớt' : 'Xem thêm'}
           </button>
         </div>
       </div>
