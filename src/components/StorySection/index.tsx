@@ -103,7 +103,7 @@ function StorySection() {
                 <div className="relative w-[480px] aspect-[3/4] max-w-full  z-0 sm:left-20">
                   <OptimalImage
                     alt="Main carousel image"
-                    src={`${story.img}.jpg`}
+                    src={`${story.img}`}
                     quality={100}
                     sizes="30vw"
                   />
