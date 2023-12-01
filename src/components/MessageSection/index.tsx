@@ -59,9 +59,15 @@ const MessageSection = () => {
         </h1>
         <p className="mt-10 text-base opacity-70">
           Rất vui vì được chia sẻ niềm vui của ngày đặc biệt này với mọi người,
-          đặc biệt là với bạn. Chúng tôi chân thành biết ơn vì sự hiện diện và
-          những lời chúc ý nghĩa mà bạn đã dành tặng. Niềm hạnh phúc của chúng
-          tôi trở nên trọn vẹn hơn khi có bạn ở bên cạnh. Cảm ơn bạn rất nhiều!
+          đặc biệt là với bạn.
+          <br />
+          Chúng tôi chân thành biết ơn vì sự hiện diện và những lời chúc ý nghĩa
+          mà bạn đã dành tặng.
+          <br />
+          Niềm hạnh phúc của chúng tôi trở nên trọn vẹn hơn khi có bạn ở bên
+          cạnh.
+          <br />
+          Cảm ơn bạn rất nhiều!
         </p>
         <p
           className={

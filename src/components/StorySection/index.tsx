@@ -39,7 +39,7 @@ import flower2 from '../../../public/images/decoration/flower-medium2.svg';
 type Story = {
   title: string;
   date: string;
-  imgName: string;
+  img: string;
   content: string;
 };
 
@@ -47,28 +47,28 @@ const stories: Story[] = [
   {
     title: 'Ngày mình chung đôi',
     date: '06/02/2014',
-    imgName: '2014',
+    img: '/images/story/2014.jpg',
     content:
       'Hôm ấy là một ngày đặc biệt, ngày khởi đầu cho hành trình của anh và em. Tuy không phải là ngày đầu tiên gặp nhau nhưng là ngày đầu tiên em và anh cho nhau một cơ hội để được cùng nhau bước đi trên chặng đường hạnh phúc dành riêng cho chúng ta.',
   },
   {
     title: 'Vào đại học',
     date: '2018',
-    imgName: 'IMG_9609_edited',
+    img: '/images/story/IMG_9609_edited.jpg',
     content:
       'Kết thúc những năm tháng học trò, ta cùng nhau bước vào giảng đường đại học với biết bao ước mơ và hy vọng về tương lai. Vui có, buồn có, chia sẻ có, bất đồng có nhưng sau tất cả chúng ta vẫn bên cạnh nhau. Hạnh phúc là được đồng hành cùng nhau trong quãng thời gian đẹp nhất của tuổi trẻ.',
   },
   {
     title: 'Tốt nghiệp',
     date: '2022',
-    imgName: 'z3745381529928_f4198f598ce43089bf2868ef6220372e',
+    img: '/images/story/z3745381529928_f4198f598ce43089bf2868ef6220372e.jpg',
     content:
       'Hành trình 4 năm đại học trôi qua không nhanh cũng không quá chậm, vừa vặn để ta cảm nhận được quãng thời gian thanh xuân cùng nhau trên giảng đường. Lời hứa tốt nghiệp cùng nhau cũng đã hoàn thành và cũng là ngày ta chính thức giới thiệu nhau với gia đình.',
   },
   {
     title: 'Chung một mái nhà',
     date: '24/12/2023',
-    imgName: 'KTIU4104',
+    img: '/images/13.18/KTIU4071 13.18.JPG',
     content:
       'Cuối cùng thì ngày hôm nay cũng đã đến, ngày anh và em chính thức về chung một nhà. Hành trình 9 năm yêu nhau đã lưu giữ những kỉ niệm đẹp nhất của thanh xuân, và tiếp theo đây hành trình hôn nhân sẽ mang đến cho chúng ta một ý niệm khác về hạnh phúc, về những khoảnh khắc ý nghĩa bên nhau đi kèm với những trách nhiệm của một gia đình.',
   },
@@ -103,7 +103,7 @@ function StorySection() {
                 <div className="relative w-[480px] aspect-[3/4] max-w-full  z-0 sm:left-20">
                   <OptimalImage
                     alt="Main carousel image"
-                    src={`/images/story/${story.imgName}.jpg`}
+                    src={`${story.img}.jpg`}
                     quality={100}
                     sizes="30vw"
                   />

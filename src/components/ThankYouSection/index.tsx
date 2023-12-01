@@ -10,15 +10,17 @@ import { LuCalendarHeart, LuMapPin } from 'react-icons/lu';
 import { MdOutlineLocationOn } from 'react-icons/md';
 import NeelaBorder from '../NeelaBorder';
 import { LiaHatCowboySolid } from 'react-icons/lia';
+import Link from 'next/link';
 
-type EventCard = {
+type EventCardProps = {
   name: string;
   date: string;
   location: string;
+  map: string;
 };
 
 const ThankYouSection = () => {
-  const renderEventCard = ({ name, date, location }: EventCard) => {
+  const renderEventCard = ({ name, date, location }: EventCardProps) => {
     return (
       <div className="p-8 mb-8 bg-white">
         <NeelaBorder>
@@ -51,12 +53,12 @@ const ThankYouSection = () => {
               <div className="py-1" />
             </div>
             <div className="col-span-full m-auto flex justify-end">
-              <button
-                type="button"
+              <Link
                 className="py-2 px-4 bg-white text-primary text-base font-bold border border-primary"
+                href={`https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9`}
               >
                 Xem bản đồ
-              </button>
+              </Link>
             </div>
           </div>
         </NeelaBorder>
@@ -86,18 +88,21 @@ const ThankYouSection = () => {
             date: '15h 22/12/23 (10/11 Âm lịch)',
             location:
               'Dốc cầu trầu hôi đường tỉnh 932, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
+            map: 'https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9',
           })}
 
           {renderEventCard({
             name: 'Nhà gái',
             date: '15h 23/12/23 (12/11 Âm lịch)',
             location: 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
+            map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
           })}
 
           {renderEventCard({
             name: 'Nhà gái',
             date: '9h 24/12/23 (12/11 Âm lịch)',
             location: 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
+            map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
           })}
         </div>
       </div>
