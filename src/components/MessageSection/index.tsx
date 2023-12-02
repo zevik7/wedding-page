@@ -25,8 +25,8 @@ const MessageSection = () => {
       </div>
       <div className="max-w-screen-md m-auto text-center mb-20 p-2">
         <div className="flex h-96 grid grid-cols-2 relative">
-          <div className="relative border-8 border-primary sm:mr-3">
-            <div className="relative border-8 border-white h-full">
+          <div className="relative border-4 sm:border-8 border-primary sm:mr-3 border-r-0">
+            <div className="relative border-4 sm:border-8 border-white h-full">
               <OptimalImage
                 src={'/images/file/KTIU3286.JPG'}
                 alt="Bride"
@@ -35,8 +35,8 @@ const MessageSection = () => {
               />
             </div>
           </div>
-          <div className="relative border-8 border-primary sm:ml-3">
-            <div className="relative border-8 border-white h-full">
+          <div className="relative border-4 sm:border-8 border-primary sm:ml-3">
+            <div className="relative border-4 sm:border-8 border-white h-full">
               <OptimalImage
                 src={'/images/file/KTIU3649.JPG'}
                 alt="Groom"
@@ -54,7 +54,7 @@ const MessageSection = () => {
           </div>
         </div>
 
-        <h1 className={'mt-20 text-primary text-3xl font-bold '}>
+        <h1 className={'mt-10 sm:mt-20 text-primary text-3xl font-bold '}>
           We are Getting Married
         </h1>
         <p className="mt-10 text-base opacity-70">

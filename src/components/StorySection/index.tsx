@@ -77,7 +77,7 @@ const stories: Story[] = [
 function StorySection() {
   return (
     <div>
-      <div className="relative p-14 after:content-[''] after:bg-primary after:absolute after:w-full after:h-full after:top-0 after:left-0 after:opacity-70 after:-z-10 ">
+      <div className="relative py-7 sm:py-14 after:content-[''] after:bg-primary after:absolute after:w-full after:h-full after:top-0 after:left-0 after:opacity-70 after:-z-10 ">
         <TitleSection content="Hành trình" whiteIcon className="text-white" />
         <OptimalImage
           className="-z-10 object-cover"
@@ -91,16 +91,16 @@ function StorySection() {
           {stories.map((story: Story, idx: number) => (
             <div key={story.date} className="flex flex-col items-center">
               <NeelaBorder>
-                <p className="text-4xl text-primary font-light p-4 sm:p-6">
+                <p className="text-2xl font-bold sm:text-4xl text-primary font-light p-4 sm:p-6">
                   {story.date}
                 </p>
               </NeelaBorder>
               <div
-                className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 items-center h-full relative py-16`}
+                className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 items-center h-full relative py-16 px-4`}
               >
                 <div className="absolute w-[1px] bg-primary top-0 bottom-[5px] left-1/2" />
 
-                <div className="relative w-[480px] aspect-[3/4] max-w-full  z-0 sm:left-20">
+                <div className="relative w-[400px] aspect-[3/4] max-w-full  z-0 sm:left-20">
                   <OptimalImage
                     alt="Main carousel image"
                     src={`${story.img}`}
@@ -115,10 +115,12 @@ function StorySection() {
                       <div className="p-2 sm:p-4">
                         <TitleSection
                           content={story.title}
-                          className="text-white text-xl"
+                          className="text-white text-lg"
                           whiteIcon={true}
                         />
-                        <p className={`px-2 py-4 text-base text-white`}>
+                        <p
+                          className={`px-2 py-4 text-sm sm:text-base text-white`}
+                        >
                           {story.content}
                         </p>
                       </div>

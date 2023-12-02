@@ -28,10 +28,10 @@ const HeadingSection = () => {
       <div className="flex justify-center">
         <Countdown />
       </div>
-      <div className="absolute w-[150px] h-full -left-[0px] sm:left-20 -top-[0px] -z-10 opacity-40">
+      <div className="absolute w-[150px] h-full -left-[0px] sm:left-20 -top-[0px] -z-10 opacity-20 sm:opacity-40">
         <OptimalImage src={flowerLine} alt="" />
       </div>
-      <div className="absolute w-[150px] h-full -right-[0px] sm:right-20 -top-[0px] -z-10 opacity-40 rotate-180">
+      <div className="absolute w-[150px] h-full -right-[0px] sm:right-20 -top-[0px] -z-10 opacity-20 sm:opacity-40 rotate-180">
         <OptimalImage src={flowerLine} alt="" />
       </div>
     </div>
