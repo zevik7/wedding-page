@@ -27,7 +27,8 @@ const WishSection = () => {
     '/api/wishes',
     fetcher
   );
-  const listRef = useRef<HTMLUListElement>(null);
+  const headerRef = useRef<any>(null);
+  const listRef = useRef<any>(null);
 
   const {
     register,
@@ -46,8 +47,17 @@ const WishSection = () => {
     });
     if (res.status === 200) {
       mutate([...(data || [])]);
-      listRef.current &&
-        listRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+
+      setTimeout(() => {
+        headerRef.current &&
+          headerRef.current.scrollIntoView({ behavior: 'smooth' });
+      }, 200);
+
+      setTimeout(() => {
+        listRef.current &&
+          listRef.current.scrollTo({ behavior: 'smooth', top: 0 });
+      }, 1000);
+
       reset();
     } else if (res.status === 429) {
       alert(res.statusText + '\n Bạn đã gửi quá 2 lần');
@@ -65,7 +75,7 @@ const WishSection = () => {
         sizes="100vw"
       />
 
-      <div className="py-12 sm:py-16">
+      <div ref={headerRef} className="py-12 sm:py-16">
         <TitleSection content="Lời chúc" whiteIcon className="text-white" />
 
         <p className="text-base text-white text-center">
