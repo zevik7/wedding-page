@@ -13,11 +13,19 @@ import { ephesis } from '@/app/fonts';
 
 const ThankYouSection = () => {
   return (
-    <div className="bg-primary bg-opacity-80 flex flex-row justify-center">
+    <div className="relative min-h-screen bg-primary bg-opacity-80 flex flex-row justify-center items-center">
+      <OptimalImage
+        fill
+        alt="Background image"
+        src={`/images/rght/z4786416031014_cb092759fe0189be1f7d5c2dfd22f2e0.jpg`}
+        quality={60}
+        className="object-cover -z-10 object-center sm:object-bottom"
+        sizes="100vw"
+      />
       <div className="relative py-10">
         <p
           className={
-            'text-3xl sm:text-5xl text-center text-white ' + ephesis.className
+            'text-4xl sm:text-5xl text-center text-white ' + ephesis.className
           }
         >
           Thiên Phú

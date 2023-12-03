@@ -2,15 +2,12 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
-// Import Swiper styles
-
 import 'swiper/css';
-
-// import required modules
 import { Autoplay } from 'swiper/modules';
 
 import OptimalImage from '../OptimalImage';
 import { useWindowSize } from '@/hooks';
+import { memo } from 'react';
 
 const selectedImagesDesktop: string[] = [
   '/images/file/KTIU3457 BIA .JPG',
@@ -69,4 +66,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export default memo(Carousel);

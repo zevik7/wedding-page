@@ -186,7 +186,7 @@ const WishSection = () => {
                 </p>
                 <div className="py-4">
                   <h1 className={'text-xl text-center text-white'}>
-                    24 Tháng 12 2023 Nhà gái
+                    24 Tháng 12 2023
                   </h1>
                 </div>
                 <OptimalImage

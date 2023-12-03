@@ -55,12 +55,16 @@ function StorySection() {
   return (
     <div>
       <div className="relative  py-12 sm:py-16  after:content-[''] after:bg-primary after:absolute after:w-full after:h-full after:top-0 after:left-0 after:opacity-70 after:-z-10 ">
-        <TitleSection content="Hành trình" whiteIcon className="text-white" />
+        <TitleSection
+          content="Cột mốc đáng nhớ"
+          whiteIcon
+          className="text-white"
+        />
         <OptimalImage
           className="-z-10 object-cover"
           src={'/images/decoration/roses.jpg'}
           alt=""
-          quality={40}
+          quality={10}
         />
       </div>
       <div className="max-w-screen-lg m-auto py-10">

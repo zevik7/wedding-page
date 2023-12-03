@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import OptimalImage from '../OptimalImage';
 
 const Footer = () => {
   const iconClassName =
@@ -7,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="w-full p-4 text-center flex flex-row items-center justify-center">
+      <div className="relative w-full p-4 text-center flex flex-row items-center justify-center">
         <p className="text-center text-primary text-sm">
           2023 Copyright: Zevik07
         </p>

@@ -48,7 +48,7 @@ const AlbumSection = () => {
         <div className="absolute  w-[211px] h-[199px] sm:w-[424px] sm:h-[398px]  -right-[100px] -top-[0px] -z-30">
           <OptimalImage src={flower2} alt="" />
         </div>
-        <TitleSection content="Ảnh cưới" />
+        <TitleSection content="Hình cưới nè!!!" />
       </div>
       <div className="relative px-2">
         <PhotoAlbum
@@ -74,6 +74,7 @@ const AlbumSection = () => {
                 alt="Detail image"
                 sizes="80vw"
                 priority={true}
+                quality={100}
               />
             ),
             thumbnail: ({ slide }) => (
@@ -81,6 +82,7 @@ const AlbumSection = () => {
                 key={slide.src}
                 src={slide.src}
                 alt="Thumbnail image"
+                quality={50}
                 sizes="20vw"
               />
             ),

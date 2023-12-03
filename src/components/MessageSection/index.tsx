@@ -20,27 +20,27 @@ const MessageSection = () => {
         <div className="absolute  w-[211px] h-[199px] sm:w-[424px] sm:h-[398px]  -right-[100px] -top-[0px] -z-30">
           <OptimalImage src={flower2} alt="" />
         </div>
-        <TitleSection content="Cặp đôi" />
+        <TitleSection content="Tụi mình" />
       </div>
       <div className="max-w-screen-md m-auto text-center mb-16 p-2">
-        <div className="flex h-96 grid grid-cols-2 relative">
+        <div className="h-96 grid grid-cols-2 relative">
           <div className="relative border-4 sm:border-8 border-primary sm:mr-3 border-r-0">
             <div className="relative border-4 sm:border-8 border-white h-full">
               <OptimalImage
                 src={'/images/file/KTIU3286.JPG'}
-                alt="Bride"
+                alt="Groom"
                 className="object-cover object-top"
-                sizes="30vw"
+                sizes="50vw"
               />
             </div>
           </div>
           <div className="relative border-4 sm:border-8 border-primary sm:ml-3">
             <div className="relative border-4 sm:border-8 border-white h-full">
               <OptimalImage
-                src={'/images/file/KTIU4145.JPG'}
-                alt="Groom"
+                src={'/images/file/KTIU3649.JPG'}
+                alt="Bride"
                 className="object-cover object-top"
-                sizes="30vw"
+                sizes="50vw"
               />
             </div>
           </div>

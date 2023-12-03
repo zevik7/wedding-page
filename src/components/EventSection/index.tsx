@@ -55,10 +55,10 @@ const EventSection = () => {
             </div>
             <div className="col-span-full m-auto flex justify-end">
               <Link
-                className="py-2 px-4 bg-white text-primary text-base font-bold border border-primary"
+                className="py-2 px-4 bg-white text-primary text-sm font-bold border border-primary"
                 href={map}
               >
-                Xem bản đồ
+                Xem bản đồ (xuất phát từ ĐHCT)
               </Link>
             </div>
           </div>
@@ -72,7 +72,7 @@ const EventSection = () => {
       <OptimalImage
         alt="Background image"
         src={`/images/damNoi/IMG_0456.jpg`}
-        quality={75}
+        quality={80}
         sizes="100vw"
         className="-z-10 object-cover opacity-80"
       />
@@ -80,8 +80,8 @@ const EventSection = () => {
       <div className="w-full max-w-screen-md m-auto">
         <div className="px-2 py-12 sm:py-16  sm:px-8 bg-primary bg-opacity-70 mx-2">
           <TitleSection content="Lễ cưới" whiteIcon className="text-white" />
-          <p className={`py-4 text-xl text-white text-center`}>
-            Rồi tới luôn !!!
+          <p className={`py-4 text-lg text-white text-center`}>
+            Tới chung vui với tụi mình nha !
           </p>
 
           {renderEventCard({
