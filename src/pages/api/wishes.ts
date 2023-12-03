@@ -7,7 +7,7 @@ import applyRateLimit, {
   getRateLimitMiddlewares,
 } from './rateLimit';
 
-const middlewares = getRateLimitMiddlewares({
+const middlewaresForPost = getRateLimitMiddlewares({
   limit: 2,
   windowMs: 15 * 60 * 1000,
 }).map(applyMiddleware);
@@ -23,7 +23,7 @@ export default async function handler(
     switch (req.method) {
       case 'POST':
         await Promise.all(
-          middlewares.map((middleware) => middleware(req, res))
+          middlewaresForPost.map((middleware) => middleware(req, res))
         );
         let bodyObject = JSON.parse(req.body);
         const created_at = new Date();

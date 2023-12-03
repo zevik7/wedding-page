@@ -9,24 +9,40 @@ import { fetcher } from '@/utils';
 import TitleSection from '../TitleSection';
 import NeelaBorder from '../NeelaBorder';
 import { ephesis } from '@/app/fonts';
+import useSWRMutation from 'swr/mutation';
 
 export type Wish = {
   _id: string;
   userName: string;
   comment: string;
   created_at: string;
+  joiningConfirmation: boolean;
 };
 
 type Form = {
   userName: string;
   comment: string;
+  joiningConfirmation: boolean;
 };
+
+async function sendRequest(url: string, { arg }: { arg: Form }) {
+  return fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(arg),
+  }).then((res) => res);
+}
 
 const WishSection = () => {
   const { data, mutate, isLoading } = useSWR<Wish[], any, any>(
     '/api/wishes',
     fetcher
   );
+
+  const { trigger, isMutating } = useSWRMutation(
+    '/api/wishes',
+    sendRequest /* options */
+  );
+
   const headerRef = useRef<any>(null);
   const listRef = useRef<any>(null);
 
@@ -38,13 +54,12 @@ const WishSection = () => {
   } = useForm<Form>();
 
   const submitForm = async (form: Form) => {
-    let res: Response = await fetch('api/wishes', {
-      method: 'POST',
-      body: JSON.stringify({
-        userName: form.userName,
-        comment: form.comment,
-      }),
+    let res: Response = await trigger({
+      userName: form.userName?.trim(),
+      comment: form.comment?.trim(),
+      joiningConfirmation: form.joiningConfirmation,
     });
+
     if (res.status === 200) {
       mutate([...(data || [])]);
 
@@ -120,24 +135,28 @@ const WishSection = () => {
                           } `}
                         >
                           <div className="flex justify-between items-center mb-2">
-                            <div className="flex items-center">
-                              <p className="inline-flex items-center mr-3 text-base text-primary font-semibold">
-                                {wish.userName?.charAt(0).toUpperCase() +
-                                  wish.userName?.slice(1)}
+                            <p className="inline-flex items-center mr-3 text-base text-primary font-semibold">
+                              {wish.userName?.charAt(0).toUpperCase() +
+                                wish.userName?.slice(1)}
+                            </p>
+                            {wish.joiningConfirmation && (
+                              <p className="inline-block rounded-md text-xs p-1 text-white bg-primary">
+                                Tham dự
                               </p>
-                              {wish.created_at && (
-                                <p className="text-sm text-gray-400">
-                                  <time dateTime={wish.created_at}>
-                                    {format(
-                                      new Date(wish.created_at),
-                                      'HH:mm dd/MM/yyyy'
-                                    )}
-                                  </time>
-                                </p>
-                              )}
-                            </div>
+                            )}
                           </div>
+
                           <p className="text-sm">{wish.comment}</p>
+                          {/* {wish.created_at && (
+                            <p className="text-sm text-gray-400 text-right">
+                              <time dateTime={wish.created_at}>
+                                {format(
+                                  new Date(wish.created_at),
+                                  'HH:mm dd/MM'
+                                )}
+                              </time>
+                            </p>
+                          )} */}
                         </article>
                       </li>
                     ))}
@@ -167,10 +186,7 @@ const WishSection = () => {
                 </p>
                 <div className="py-4">
                   <h1 className={'text-xl text-center text-white'}>
-                    22 Tháng 12 2023 Nhà trai
-                  </h1>
-                  <h1 className={'text-xl text-center text-white'}>
-                    23-24 Tháng 12 2023 Nhà gái
+                    24 Tháng 12 2023 Nhà gái
                   </h1>
                 </div>
                 <OptimalImage
@@ -185,7 +201,7 @@ const WishSection = () => {
                 <input
                   type="text"
                   className="block w-full p-4 border border-gray-300 bg-gray-50  focus:outline-none"
-                  placeholder="Nhập tên của bạn"
+                  placeholder="Tên của bạn"
                   {...register('userName', {
                     required: 'Nhập đi mà, đừng cheat :((',
                     minLength: {
@@ -208,7 +224,7 @@ const WishSection = () => {
 
               <div className="mb-6">
                 <textarea
-                  placeholder="Nhập lời chúc của bạn"
+                  placeholder="Lời chúc của bạn"
                   className="block w-full p-4 min-h-[100px] resize-none border border-gray-300 bg-gray-50  focus:outline-none"
                   {...register('comment', {
                     required: 'Nhập đi mà, đừng cheat :((',
@@ -228,13 +244,27 @@ const WishSection = () => {
                   </span>
                 )}
               </div>
-              <div className="mb-6 flex justify-end">
+              <div className="mb-6 flex justify-between items-center gap-4">
+                <div className="flex items-center">
+                  <input
+                    id="joiningConfirmation"
+                    type="checkbox"
+                    className="w-4 h-4 text-primary rounded accent-neutral focus:ring-secondary focus:ring-2"
+                    {...register('joiningConfirmation')}
+                  />
+                  <label
+                    htmlFor="joiningConfirmation"
+                    className="ms-2 text-sm text-white"
+                  >
+                    Tham dự
+                  </label>
+                </div>
                 <button
-                  disabled={isLoading}
+                  disabled={isMutating}
                   type="submit"
                   className="py-3 px-8 bg-white text-primary font-bold "
                 >
-                  {!isLoading ? 'Gửi' : 'Đang gửi'}
+                  {!isMutating ? 'Gửi lời chúc' : 'Đang gửi'}
                 </button>
               </div>
             </form>

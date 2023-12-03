@@ -8,7 +8,7 @@ import { useParallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const HeadingSection = () => {
   return (
-    <div className="relative h-screen py-5 sm:py-10 bg-primary bg-opacity-60 grid grid-cols-1 justify-items-center items-center">
+    <div className="relative h-screen py-5 sm:py-10 bg-primary bg-opacity-70 grid grid-cols-1 justify-items-center items-center">
       <div className="absolute top-0 left-0 right-0 bottom-0 -z-20">
         <Carousel />
       </div>

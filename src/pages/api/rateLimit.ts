@@ -15,8 +15,8 @@ const getIP = (request) =>
   request.connection.remoteAddress;
 
 export const getRateLimitMiddlewares = ({
-  limit = 5,
-  windowMs = 2 * 60 * 1000,
+  limit = 10,
+  windowMs = 2 * 60 * 1000, // 2 mins
 } = {}) => [rateLimit({ keyGenerator: getIP, windowMs, max: limit })];
 
 // This must be defined out of applyRateLimit and API routes,

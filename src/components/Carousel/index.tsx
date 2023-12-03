@@ -47,11 +47,10 @@ function Carousel() {
         <SwiperSlide key={selectedImage} className="overflow-hidden">
           {({ isActive }) => (
             <motion.div
-              initial={{ scale: 1.3, opacity: 0.9 }}
+              initial={{ scale: 1.3 }}
               transition={{ duration: 15 }}
               animate={{
                 scale: isActive ? 1 : 1.3,
-                opacity: isActive ? 1 : 0,
               }}
               className="h-full w-full"
             >
@@ -60,7 +59,7 @@ function Carousel() {
                 src={selectedImage}
                 quality={100}
                 sizes="100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </motion.div>
           )}
