@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { memo } from 'react';
 import './style.css';
 
 import { IoChevronUp, IoChevronDown } from 'react-icons/io5';
@@ -22,7 +22,7 @@ type Story = {
 
 const stories: Story[] = [
   {
-    title: 'Ngày mình chung đôi',
+    title: 'Ngày chung đôi',
     date: '06/02/2014',
     img: '/images/story/2014.jpg',
     content:
@@ -54,7 +54,7 @@ const stories: Story[] = [
 function StorySection() {
   return (
     <div>
-      <div className="relative py-7 sm:py-14 after:content-[''] after:bg-primary after:absolute after:w-full after:h-full after:top-0 after:left-0 after:opacity-70 after:-z-10 ">
+      <div className="relative  py-12 sm:py-16  after:content-[''] after:bg-primary after:absolute after:w-full after:h-full after:top-0 after:left-0 after:opacity-70 after:-z-10 ">
         <TitleSection content="Hành trình" whiteIcon className="text-white" />
         <OptimalImage
           className="-z-10 object-cover"
@@ -63,17 +63,17 @@ function StorySection() {
           quality={40}
         />
       </div>
-      <div className="max-w-screen-lg m-auto py-20">
+      <div className="max-w-screen-lg m-auto py-10">
         <div id="timeline" className="relative">
           {stories.map((story: Story, idx: number) => (
             <div key={story.date} className="flex flex-col items-center">
               <NeelaBorder>
-                <p className="text-2xl font-bold sm:text-4xl text-primary font-light p-4 sm:p-6">
+                <p className="text-2xl sm:text-3xl text-primary font-light p-4 sm:p-6">
                   {story.date}
                 </p>
               </NeelaBorder>
               <div
-                className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 items-center h-full relative py-16 px-4`}
+                className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 items-center h-full relative py-12 px-2`}
               >
                 <div className="absolute w-[1px] bg-primary top-0 bottom-[5px] left-1/2" />
 
@@ -92,7 +92,7 @@ function StorySection() {
                       <div className="p-2 sm:p-4">
                         <TitleSection
                           content={story.title}
-                          className="text-white text-lg"
+                          className="text-white text-lg sm:text-xl"
                           whiteIcon={true}
                         />
                         <p
@@ -131,4 +131,4 @@ function StorySection() {
   );
 }
 
-export default StorySection;
+export default memo(StorySection);

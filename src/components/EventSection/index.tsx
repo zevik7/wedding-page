@@ -1,41 +1,43 @@
-import React from 'react';
-import Section from '../Section';
-import Countdown from '../Countdown';
-import PrimaryWrapper from '../PrimaryWrapper';
-import Image from 'next/image';
 import OptimalImage from '../OptimalImage';
 import TitleSection from '../TitleSection';
 import { LuCalendarHeart, LuMapPin } from 'react-icons/lu';
-import { MdOutlineLocationOn } from 'react-icons/md';
 import NeelaBorder from '../NeelaBorder';
 import { LiaHatCowboySolid } from 'react-icons/lia';
 import Link from 'next/link';
+import { memo } from 'react';
 
 type EventCardProps = {
   name: string;
   date: string;
   location: string;
   map: string;
+  image: string;
 };
 
 const EventSection = () => {
-  const renderEventCard = ({ name, date, location }: EventCardProps) => {
+  const renderEventCard = ({
+    name,
+    date,
+    location,
+    image,
+    map,
+  }: EventCardProps) => {
     return (
-      <div className="p-8 mb-8 bg-white">
+      <div className="p-6 mb-6 sm:p-8 sm:mb-8 bg-white">
         <NeelaBorder>
-          <div className="grid grid-cols-1 sm:grid-cols-4 items-center justify-items-center gap-2 px-8 py-6 bg-white">
+          <div className="grid grid-cols-1 sm:grid-cols-4 items-center justify-items-center gap-2 sm:gap-4 px-6 py-4 sm:px-8 sm:py-6 bg-white">
             <div className="sm:col-span-1 relative aspect-square w-[200px] sm:max-w-full">
               <OptimalImage
                 alt="Background image"
-                src={`/images/13.18/KTIU3182 13.18.JPG`}
+                src={image}
                 quality={70}
                 className="rounded-full aspect-square object-cover"
-                sizes="99vw"
+                sizes="30vw"
               />
             </div>
 
             <div className="sm:col-span-3">
-              <h1 className="text-2xl uppercase text-primary text-center sm:text-left flex flex-row">
+              <h1 className="text-xl sm:text-2xl uppercase text-primary text-center sm:text-left flex flex-row">
                 <LiaHatCowboySolid className="text-3xl mr-2" />
                 {name}
               </h1>
@@ -54,7 +56,7 @@ const EventSection = () => {
             <div className="col-span-full m-auto flex justify-end">
               <Link
                 className="py-2 px-4 bg-white text-primary text-base font-bold border border-primary"
-                href={`https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9`}
+                href={map}
               >
                 Xem bản đồ
               </Link>
@@ -66,7 +68,7 @@ const EventSection = () => {
   };
 
   return (
-    <div className="relative py-20">
+    <div className="relative py-16 sm:py-20">
       <OptimalImage
         alt="Background image"
         src={`/images/damNoi/IMG_0456.jpg`}
@@ -76,9 +78,9 @@ const EventSection = () => {
       />
 
       <div className="w-full max-w-screen-md m-auto">
-        <div className="py-6 px-4 sm:py-12 sm:px-8 bg-primary bg-opacity-70">
+        <div className="px-2 py-12 sm:py-16  sm:px-8 bg-primary bg-opacity-70 mx-2">
           <TitleSection content="Lễ cưới" whiteIcon className="text-white" />
-          <p className={`px-2 py-4 text-xl text-white text-center`}>
+          <p className={`py-4 text-xl text-white text-center`}>
             Rồi tới luôn !!!
           </p>
 
@@ -88,6 +90,7 @@ const EventSection = () => {
             location:
               'Dốc cầu trầu hôi đường tỉnh 932, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
             map: 'https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9',
+            image: '/images/damNoi/IMG_0764.jpg',
           })}
 
           {renderEventCard({
@@ -95,6 +98,7 @@ const EventSection = () => {
             date: '15h 23/12/23 (11/11 Âm lịch)',
             location: 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
             map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
+            image: '/images/damNoi/IMG_0595.jpg',
           })}
 
           {renderEventCard({
@@ -102,6 +106,7 @@ const EventSection = () => {
             date: '9h 24/12/23 (12/11 Âm lịch)',
             location: 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
             map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
+            image: '/images/damNoi/IMG_0595.jpg',
           })}
         </div>
       </div>
@@ -109,4 +114,4 @@ const EventSection = () => {
   );
 };
 
-export default EventSection;
+export default memo(EventSection);

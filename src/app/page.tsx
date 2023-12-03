@@ -5,10 +5,12 @@ import StorySection from '@/components/StorySection';
 import EventSection from '@/components/EventSection';
 import WishSection from '@/components/WishSection';
 import ThankYouSection from '@/components/ThankYouSection';
+import HeadingSection from '@/components/HeadingSection';
 
 export default function page() {
   return (
     <main>
+      <HeadingSection />
       <MessageSection />
       <StorySection />
       <AlbumSection />

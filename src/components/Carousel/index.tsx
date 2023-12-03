@@ -20,6 +20,8 @@ const selectedImagesDesktop: string[] = [
 const selectedImageMobile: string[] = [
   '/images/60.90/KTIU3551 60.90.JPG',
   '/images/60.90/KTIU4222 60.90 .JPG',
+  '/images/13.18/KTIU3182 13.18.JPG',
+  '/images/13.18/KTIU4046 13.18.JPG',
 ];
 
 function Carousel() {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Section from '../Section';
 import Countdown from '../Countdown';
 import PrimaryWrapper from '../PrimaryWrapper';
@@ -13,23 +13,23 @@ import flower2 from '../../../public/images/decoration/flower-medium2.svg';
 const MessageSection = () => {
   return (
     <>
-      <div className="relative my-8 sm:my-16 max-w-7xl m-auto">
-        <div className="absolute w-[211px] h-[199px] sm:w-[424px] sm:h-[398px] -left-[100px] -top-[150px] -scale-y-100 rotate-90 -z-10">
+      <div className="relative my-12 sm:my-16 m-auto">
+        <div className="absolute w-[211px] h-[199px] sm:w-[424px] sm:h-[398px] -left-[100px] -top-[150px] -scale-y-100 rotate-90 -z-30">
           <OptimalImage src={flower1} alt="" />
         </div>
-        <TitleSection content="Cặp đôi" />
-        <div className="absolute  w-[211px] h-[199px] sm:w-[424px] sm:h-[398px]  -right-[100px] -top-[0px] -z-10">
+        <div className="absolute  w-[211px] h-[199px] sm:w-[424px] sm:h-[398px]  -right-[100px] -top-[0px] -z-30">
           <OptimalImage src={flower2} alt="" />
         </div>
+        <TitleSection content="Cặp đôi" />
       </div>
-      <div className="max-w-screen-md m-auto text-center mb-20 p-2">
+      <div className="max-w-screen-md m-auto text-center mb-16 p-2">
         <div className="flex h-96 grid grid-cols-2 relative">
           <div className="relative border-4 sm:border-8 border-primary sm:mr-3 border-r-0">
             <div className="relative border-4 sm:border-8 border-white h-full">
               <OptimalImage
                 src={'/images/file/KTIU3286.JPG'}
                 alt="Bride"
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="30vw"
               />
             </div>
@@ -37,9 +37,9 @@ const MessageSection = () => {
           <div className="relative border-4 sm:border-8 border-primary sm:ml-3">
             <div className="relative border-4 sm:border-8 border-white h-full">
               <OptimalImage
-                src={'/images/file/KTIU3649.JPG'}
+                src={'/images/file/KTIU4145.JPG'}
                 alt="Groom"
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="30vw"
               />
             </div>
@@ -80,4 +80,4 @@ const MessageSection = () => {
   );
 };
 
-export default MessageSection;
+export default memo(MessageSection);

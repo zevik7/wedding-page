@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Countdown from '../Countdown';
 import PrimaryWrapper from '../PrimaryWrapper';
 import Image from 'next/image';
@@ -46,4 +46,4 @@ const ThankYouSection = () => {
   );
 };
 
-export default ThankYouSection;
+export default memo(ThankYouSection);

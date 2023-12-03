@@ -4,13 +4,11 @@ import { format } from 'date-fns';
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useSWR from 'swr';
-import Section from '../Section';
 import OptimalImage from '../OptimalImage';
 import { fetcher } from '@/utils';
 import TitleSection from '../TitleSection';
 import NeelaBorder from '../NeelaBorder';
 import { ephesis } from '@/app/fonts';
-import flower2 from '../../../public/images/decoration/flower-medium2.svg';
 
 export type Wish = {
   _id: string;
@@ -66,16 +64,14 @@ const WishSection = () => {
         sizes="100vw"
       />
 
-      <div className="my-4" />
+      <div className="py-12 sm:py-16">
+        <TitleSection content="Lời chúc" whiteIcon className="text-white" />
 
-      <TitleSection content="Lời chúc" whiteIcon className="text-white" />
-
-      <p className="text-base text-white text-center">
-        Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của chúng tôi có thêm
-        một niềm hạnh phúc!
-      </p>
-
-      <div className="my-10" />
+        <p className="text-base text-white text-center">
+          Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của chúng mình có
+          thêm một niềm hạnh phúc!
+        </p>
+      </div>
 
       <div className="relative max-w-screen-lg m-auto ">
         <NeelaBorder borderElementStyle="border-white border-2">
@@ -158,13 +154,14 @@ const WishSection = () => {
                 >
                   Save the date
                 </p>
-                <h1
-                  className={
-                    'text-primary text-4xl text-center text-white py-4'
-                  }
-                >
-                  24 Tháng 12 2023
-                </h1>
+                <div className="py-4">
+                  <h1 className={'text-xl text-center text-white'}>
+                    22 Tháng 12 2023 Nhà trai
+                  </h1>
+                  <h1 className={'text-xl text-center text-white'}>
+                    23-24 Tháng 12 2023 Nhà gái
+                  </h1>
+                </div>
                 <OptimalImage
                   src={'images/decoration/lineBorder.svg'}
                   alt=""
@@ -228,4 +225,4 @@ const WishSection = () => {
   );
 };
 
-export default WishSection;
+export default memo(WishSection);
