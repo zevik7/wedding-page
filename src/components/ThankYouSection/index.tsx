@@ -10,7 +10,6 @@ import NeelaBorder from '../NeelaBorder';
 import { LiaHatCowboySolid } from 'react-icons/lia';
 import Link from 'next/link';
 import { ephesis } from '@/app/fonts';
-import flowerLineWhite from '../../../public/images/decoration/flowerLineWhite.svg';
 
 const ThankYouSection = () => {
   return (

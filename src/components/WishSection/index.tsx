@@ -80,7 +80,7 @@ const WishSection = () => {
       <div className="relative max-w-screen-lg m-auto ">
         <NeelaBorder borderElementStyle="border-white border-2">
           <div className="grid sm:gap-2 grid-cols-1 sm:grid-cols-2">
-            <div className="p-8 sm:p-10 relative">
+            <div className="p-4 sm:p-10 relative">
               <OptimalImage
                 src={'images/decoration/leafPurple.svg'}
                 alt=""

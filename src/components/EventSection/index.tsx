@@ -1,5 +1,4 @@
 import React from 'react';
-import Calendar from '../Calendar';
 import Section from '../Section';
 import Countdown from '../Countdown';
 import PrimaryWrapper from '../PrimaryWrapper';
@@ -93,7 +92,7 @@ const EventSection = () => {
 
           {renderEventCard({
             name: 'Nhà gái',
-            date: '15h 23/12/23 (12/11 Âm lịch)',
+            date: '15h 23/12/23 (11/11 Âm lịch)',
             location: 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
             map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
           })}

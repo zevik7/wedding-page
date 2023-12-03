@@ -1,28 +1,5 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
-
-// import required modules
-import {
-  EffectCoverflow,
-  Pagination,
-  Autoplay,
-  Mousewheel,
-  Navigation,
-  FreeMode,
-  Scrollbar,
-} from 'swiper/modules';
-
-import { shimmer, toBase64 } from '@/utils';
 import './style.css';
 
 import { IoChevronUp, IoChevronDown } from 'react-icons/io5';

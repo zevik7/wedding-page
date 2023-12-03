@@ -35,13 +35,13 @@ const Countdown = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const textNumStyle = ` text-small sm:text-base md:text-xl`;
-  const textStringStyle = ` text-xs sm:text-sm md:text-base`;
+  const textNumStyle = `text-lg sm:text-xl md:text-2xl`;
+  const textStringStyle = `text-sm sm:text-base md:text-lg`;
 
   return (
     <div className="grid grid-flow-col gap-5 sm:gap-10 text-center auto-cols-max">
       <div className="flex flex-col p-4 rounded-box animated-border">
-        <span className="countdown ">
+        <span className={'countdown ' + textNumStyle}>
           <span
             style={
               {
@@ -53,7 +53,7 @@ const Countdown = () => {
         <span className={textStringStyle}>ngày</span>
       </div>
       <div className="flex flex-col p-4 rounded-box animated-border">
-        <span className={'countdown' + textNumStyle}>
+        <span className={'countdown ' + textNumStyle}>
           <span
             style={
               {
@@ -65,7 +65,7 @@ const Countdown = () => {
         <span className={textStringStyle}>giờ</span>
       </div>
       <div className="flex flex-col p-4 rounded-box animated-border">
-        <span className={'countdown' + textNumStyle}>
+        <span className={'countdown ' + textNumStyle}>
           <span
             style={
               {
@@ -77,7 +77,7 @@ const Countdown = () => {
         <span className={textStringStyle}>phút</span>
       </div>
       <div className="flex flex-col p-4 rounded-box animated-border">
-        <span className={'countdown' + textNumStyle}>
+        <span className={'countdown ' + textNumStyle}>
           <span
             style={
               {

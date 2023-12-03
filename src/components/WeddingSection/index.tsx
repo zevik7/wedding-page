@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Calendar from '../Calendar';
 import Section from '../Section';
 import Countdown from '../Countdown';
 import PrimaryWrapper from '../PrimaryWrapper';
