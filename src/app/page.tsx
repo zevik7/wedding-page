@@ -6,6 +6,9 @@ import EventSection from '@/components/EventSection';
 import WishSection from '@/components/WishSection';
 import ThankYouSection from '@/components/ThankYouSection';
 import HeadingSection from '@/components/HeadingSection';
+import ScrollToTopButton from '@/components/ScrollToTop';
+import BackgroundMusicButton from '@/components/BackgroundMusicButton';
+import SnowFallBackground from '@/components/SnowFallBackground';
 
 export default function page() {
   return (
@@ -18,6 +21,9 @@ export default function page() {
       <WishSection />
       <ThankYouSection />
       <Footer />
+      <ScrollToTopButton />
+      <BackgroundMusicButton />
+      <SnowFallBackground />
     </main>
   );
 }

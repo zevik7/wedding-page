@@ -4,7 +4,6 @@ import OptimalImage from '../OptimalImage';
 import { ephesis } from '@/app/fonts';
 import flowerLine from '../../../public/images/decoration/flowerLine.svg';
 import Carousel from '../Carousel';
-import { useParallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const HeadingSection = () => {
   return (
@@ -14,10 +13,10 @@ const HeadingSection = () => {
       </div>
 
       <div className="absolute md:w-[150px] md:h-full md:left-20 md:rotate-0 md:opacity-100 md:translate-x-0 h-[80vw] w-[150px] left-1/2 top-0 opacity-40 rotate-90 -translate-x-1/2 scale-y-110">
-        <OptimalImage src={flowerLine} alt="" />
+        <OptimalImage src={flowerLine} alt="" sizes="30vw" />
       </div>
       <div className="absolute md:w-[150px] md:h-full md:right-20  md:opacity-100 md:translate-x-0 md:rotate-180 h-[80vw] w-[150px] right-1/2 bottom-0 opacity-40 -rotate-90 translate-x-1/2 scale-y-110">
-        <OptimalImage src={flowerLine} alt="" />
+        <OptimalImage src={flowerLine} alt="" sizes="30vw" />
       </div>
 
       <div className=" text-white">

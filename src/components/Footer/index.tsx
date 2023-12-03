@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
-import OptimalImage from '../OptimalImage';
+import React, { memo } from 'react';
 
 const Footer = () => {
   const iconClassName =
@@ -46,4 +45,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

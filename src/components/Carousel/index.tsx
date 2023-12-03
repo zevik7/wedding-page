@@ -49,7 +49,7 @@ function Carousel() {
               animate={{
                 scale: isActive ? 1 : 1.3,
               }}
-              className="h-full w-full"
+              className="h-full w-full relative"
             >
               <OptimalImage
                 alt="Main carousel image"

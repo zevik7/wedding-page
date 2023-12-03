@@ -1,4 +1,6 @@
+import FlashLoading from '@/components/FlashLoading';
+
 export default function Loading() {
   // Or a custom loading skeleton component
-  return <p>'Loading...'</p>
+  return <FlashLoading />;
 }

@@ -1,8 +1,4 @@
 import React, { memo } from 'react';
-import Section from '../Section';
-import Countdown from '../Countdown';
-import PrimaryWrapper from '../PrimaryWrapper';
-import Image from 'next/image';
 import OptimalImage from '../OptimalImage';
 import { RiHeartsLine } from 'react-icons/ri';
 import { ephesis } from '@/app/fonts';
@@ -15,10 +11,10 @@ const MessageSection = () => {
     <>
       <div className="relative my-12 sm:my-16 m-auto">
         <div className="absolute w-[211px] h-[199px] sm:w-[424px] sm:h-[398px] -left-[100px] -top-[150px] -scale-y-100 rotate-90 -z-30">
-          <OptimalImage src={flower1} alt="" />
+          <OptimalImage src={flower1} alt="" sizes="30vw" />
         </div>
         <div className="absolute  w-[211px] h-[199px] sm:w-[424px] sm:h-[398px]  -right-[100px] -top-[0px] -z-30">
-          <OptimalImage src={flower2} alt="" />
+          <OptimalImage src={flower2} alt="" sizes="30vw" />
         </div>
         <TitleSection content="Tụi mình" />
       </div>

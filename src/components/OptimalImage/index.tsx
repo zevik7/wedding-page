@@ -10,7 +10,7 @@ export default function OptimalImage(props: ImageProps) {
   return (
     <Image
       fill={props.width || props.height ? undefined : true}
-      quality={100}
+      quality={90}
       placeholder={blurDataURL ? 'blur' : undefined}
       onLoadingComplete={() => setLoading(false)}
       {...props}

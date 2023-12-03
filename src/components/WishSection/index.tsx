@@ -10,6 +10,9 @@ import TitleSection from '../TitleSection';
 import NeelaBorder from '../NeelaBorder';
 import { ephesis } from '@/app/fonts';
 import useSWRMutation from 'swr/mutation';
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import FlashLoading from '../FlashLoading';
 
 export type Wish = {
   _id: string;
@@ -78,6 +81,22 @@ const WishSection = () => {
       alert(res.statusText + '\n Bạn đã gửi quá 2 lần');
     }
   };
+
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  const [isLoadingHome, setIsLoadingHome] = useState(isHome);
+
+  useEffect(() => {
+    if (isLoadingHome) {
+      setTimeout(() => {
+        setIsLoadingHome(false);
+      }, 1500);
+    }
+  }, [isLoadingHome]);
+
+  if (isLoadingHome) {
+    return <FlashLoading />;
+  }
 
   return (
     <div className="relative p-7 sm:p-14 after:content-[''] after:bg-primary after:absolute after:w-full after:h-full after:top-0 after:left-0 after:opacity-60 after:-z-10 ">
@@ -244,7 +263,7 @@ const WishSection = () => {
                   </span>
                 )}
               </div>
-              <div className="mb-6 flex justify-between items-center gap-4">
+              <div className="mb-6 flex justify-end items-center gap-4">
                 <div className="flex items-center">
                   <input
                     id="joiningConfirmation"

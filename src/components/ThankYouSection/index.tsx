@@ -1,14 +1,5 @@
-import React, { memo } from 'react';
-import Countdown from '../Countdown';
-import PrimaryWrapper from '../PrimaryWrapper';
-import Image from 'next/image';
+import { memo } from 'react';
 import OptimalImage from '../OptimalImage';
-import TitleSection from '../TitleSection';
-import { LuCalendarHeart, LuMapPin } from 'react-icons/lu';
-import { MdOutlineLocationOn } from 'react-icons/md';
-import NeelaBorder from '../NeelaBorder';
-import { LiaHatCowboySolid } from 'react-icons/lia';
-import Link from 'next/link';
 import { ephesis } from '@/app/fonts';
 
 const ThankYouSection = () => {

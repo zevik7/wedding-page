@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import PhotoAlbum from 'react-photo-album';
-import Lightbox from 'yet-another-react-lightbox';
+import Lightbox, { SlideImage } from 'yet-another-react-lightbox';
 import PhotoAlbumImage from '../PhotoAlbumImage';
 import photosLink from './photos';
 
@@ -39,6 +39,31 @@ const AlbumSection = () => {
     setCurrentPhotos((prevPhotos) => [...prevPhotos, ...nextPhotos]);
   };
 
+  const renderImage = React.useMemo(
+    () => ({
+      slide: ({ slide }: { slide: SlideImage }) => (
+        <OptimalImage
+          key={slide.src}
+          src={slide.src}
+          alt="Detail image"
+          sizes="80vw"
+          priority={true}
+          quality={100}
+        />
+      ),
+      thumbnail: ({ slide }: { slide: SlideImage }) => (
+        <OptimalImage
+          key={slide.src}
+          src={slide.src}
+          alt="Thumbnail image"
+          quality={50}
+          sizes="20vw"
+        />
+      ),
+    }),
+    []
+  );
+
   return (
     <div>
       <div className="relative py-12 sm:py-16 m-auto">
@@ -66,27 +91,7 @@ const AlbumSection = () => {
           open={index >= 0}
           close={() => setIndex(-1)}
           plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-          render={{
-            slide: ({ slide }) => (
-              <OptimalImage
-                key={slide.src}
-                src={slide.src}
-                alt="Detail image"
-                sizes="80vw"
-                priority={true}
-                quality={100}
-              />
-            ),
-            thumbnail: ({ slide }) => (
-              <OptimalImage
-                key={slide.src}
-                src={slide.src}
-                alt="Thumbnail image"
-                quality={50}
-                sizes="20vw"
-              />
-            ),
-          }}
+          render={renderImage}
         />
 
         <div className="flex justify-center p-5" ref={ref}>

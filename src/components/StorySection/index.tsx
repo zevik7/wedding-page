@@ -1,11 +1,7 @@
-'use client';
 import React, { memo } from 'react';
 import './style.css';
 
-import { IoChevronUp, IoChevronDown } from 'react-icons/io5';
 import OptimalImage from '../OptimalImage';
-import Section from '../Section';
-import SnowFallBackground from '../SnowFallBackground';
 import TitleSection from '../TitleSection';
 import NeelaBorder from '../NeelaBorder';
 import { GiDiamondRing } from 'react-icons/gi';
