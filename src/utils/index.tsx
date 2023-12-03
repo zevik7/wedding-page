@@ -17,8 +17,9 @@ const toBase64 = (str: string) =>
     ? Buffer.from(str).toString('base64')
     : window.btoa(str);
 
-const fetcher = (...args: any[]) =>
+const fetcher = (...args: any[]) => {
   //@ts-ignore
-  fetch(...args).then((res) => res.json());
+  return fetch(...args).then((res) => res.json());
+};
 
 export { shimmer, toBase64, fetcher };

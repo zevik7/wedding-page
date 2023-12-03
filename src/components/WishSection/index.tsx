@@ -44,12 +44,13 @@ const WishSection = () => {
         comment: form.comment,
       }),
     });
-    let wishId: string = await res.json();
     if (res.status === 200) {
       mutate([...(data || [])]);
       listRef.current &&
         listRef.current.scrollTo({ top: 0, behavior: 'smooth' });
       reset();
+    } else if (res.status === 429) {
+      alert(res.statusText + '\n Bạn đã gửi quá 2 lần');
     }
   };
 
@@ -182,6 +183,10 @@ const WishSection = () => {
                       message:
                         'Điền chữ lót luôn đi bạn ơi cho tụi mình dễ nhớ',
                     },
+                    maxLength: {
+                      value: 100,
+                      message: 'Tối đa 100 ký tự',
+                    },
                   })}
                 />
                 {errors.userName && (
@@ -201,6 +206,10 @@ const WishSection = () => {
                       value: 10,
                       message: 'Nhập đi mà, đừng cheat :((',
                     },
+                    maxLength: {
+                      value: 300,
+                      message: 'Tối đa 300 ký tự',
+                    },
                   })}
                 />
                 {errors.comment && (
@@ -211,10 +220,11 @@ const WishSection = () => {
               </div>
               <div className="mb-6 flex justify-end">
                 <button
+                  disabled={isLoading}
                   type="submit"
                   className="py-3 px-8 bg-white text-primary font-bold "
                 >
-                  Gửi
+                  {!isLoading ? 'Gửi' : 'Đang gửi'}
                 </button>
               </div>
             </form>

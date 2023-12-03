@@ -34,7 +34,6 @@ function Carousel() {
     <Swiper
       className="w-full h-full"
       slidesPerView={1}
-      spaceBetween={30}
       centeredSlides={true}
       modules={[Autoplay]}
       pagination={false}
@@ -45,13 +44,14 @@ function Carousel() {
       }}
     >
       {selectedImages.map((selectedImage: string, idx: number) => (
-        <SwiperSlide key={selectedImage}>
+        <SwiperSlide key={selectedImage} className="overflow-hidden">
           {({ isActive }) => (
             <motion.div
-              initial={{ scale: 1.3 }}
+              initial={{ scale: 1.3, opacity: 0.9 }}
               transition={{ duration: 15 }}
               animate={{
                 scale: isActive ? 1 : 1.3,
+                opacity: isActive ? 1 : 0,
               }}
               className="h-full w-full"
             >
