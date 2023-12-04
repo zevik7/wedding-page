@@ -102,6 +102,26 @@ const EventSection = () => {
             whileInView="visible"
             transition={{ duration: 1 }}
             variants={{
+              visible: { opacity: 1, right: 0 },
+              hidden: { opacity: 0, right: -200 },
+            }}
+            className="relative"
+          >
+            {renderEventCard({
+              name: 'Nhà trai',
+              date: '15h 21/12/23 (9/11 Âm lịch)',
+              location:
+                'Dốc cầu trầu hôi đường tỉnh 932, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
+              map: 'https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9',
+              image: '/images/damNoi/IMG_0764.jpg',
+            })}
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 1 }}
+            variants={{
               visible: { opacity: 1, left: 0 },
               hidden: { opacity: 0, left: -200 },
             }}
