@@ -104,8 +104,8 @@ function StorySection() {
                     <OptimalImage
                       alt="Main carousel image"
                       src={`${story.img}`}
-                      quality={100}
-                      sizes="30vw"
+                      quality={85}
+                      sizes="50vw"
                     />
                   </motion.div>
                 </div>

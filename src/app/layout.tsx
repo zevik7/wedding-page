@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`overflow-x-hidden ` + merienda.className}>
+      <body className={merienda.className}>
         <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>

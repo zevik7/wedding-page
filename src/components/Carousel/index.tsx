@@ -25,7 +25,7 @@ function Carousel() {
   const { width } = useWindowSize();
 
   let selectedImages = selectedImageMobile;
-  if (width > 640) selectedImages = selectedImagesDesktop;
+  if (width > 768) selectedImages = selectedImagesDesktop;
 
   return (
     <Swiper

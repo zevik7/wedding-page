@@ -13,7 +13,7 @@ import ProgressBar from '@/components/ProgressBar';
 
 export default function page() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <HeadingSection />
       <MessageSection />
       <StorySection />
