@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 
 const ThankYouSection = () => {
   return (
-    <div className="relative min-h-screen bg-primary bg-opacity-80 flex flex-row justify-center items-center overflow-hidden">
+    <div className="relative min-h-screen flex flex-row justify-center items-center overflow-hidden">
       <motion.div
         initial="hidden"
         whileInView="visible"
-        transition={{ duration: 20 }}
+        transition={{ duration: 30 }}
         variants={{
           visible: { scale: 1 },
           hidden: { scale: 1.5 },
