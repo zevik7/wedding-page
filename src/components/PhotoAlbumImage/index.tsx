@@ -11,10 +11,10 @@ export default function PhotoAlbumImage({
     <div key={photo.src} style={{ ...wrapperStyle, position: 'relative' }}>
       <OptimalImage
         src={photo.src}
-        quality={90}
-        sizes="20vw"
+        quality={80}
+        sizes="25vw"
         {...{ alt, title, className, onClick }}
-        className="hover:scale-110"
+        className="hover:scale-120"
       />
     </div>
   );

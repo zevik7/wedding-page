@@ -103,7 +103,7 @@ const WishSection = () => {
         fill
         alt="Background image"
         src={`/images/damNoi/IMG_0482.jpg`}
-        quality={60}
+        quality={70}
         className="object-cover -z-10"
         sizes="100vw"
       />

@@ -32,7 +32,7 @@ const EventSection = () => {
               <OptimalImage
                 alt="Background image"
                 src={image}
-                quality={70}
+                quality={60}
                 className="rounded-full aspect-square object-cover"
                 sizes="30vw"
               />

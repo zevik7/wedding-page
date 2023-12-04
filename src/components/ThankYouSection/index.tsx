@@ -9,7 +9,7 @@ const ThankYouSection = () => {
         fill
         alt="Background image"
         src={`/images/rght/z4786416031014_cb092759fe0189be1f7d5c2dfd22f2e0.jpg`}
-        quality={60}
+        quality={50}
         className="object-cover -z-10 object-center sm:object-bottom"
         sizes="100vw"
       />
@@ -32,6 +32,7 @@ const ThankYouSection = () => {
           width={200}
           height={100}
           className="absolute w-[90px] h-full -left-[90px] -top-[0px] -rotate-[130deg]"
+          sizes="20vw"
         />
         <OptimalImage
           src={'images/decoration/leafPurple.svg'}
@@ -39,6 +40,7 @@ const ThankYouSection = () => {
           width={200}
           height={100}
           className="absolute w-[90px] h-full -right-[90px] -top-[0px] rotate-[40deg]"
+          sizes="20vw"
         />
       </div>
     </div>

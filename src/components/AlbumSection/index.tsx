@@ -48,7 +48,6 @@ const AlbumSection = () => {
           alt="Detail image"
           sizes="80vw"
           priority={true}
-          quality={100}
         />
       ),
       thumbnail: ({ slide }: { slide: SlideImage }) => (
@@ -68,10 +67,10 @@ const AlbumSection = () => {
     <div>
       <div className="relative py-12 sm:py-16 m-auto">
         <div className="absolute w-[211px] h-[199px] sm:w-[424px] sm:h-[398px] -left-[100px] -top-[150px] -scale-y-100 rotate-90 -z-30">
-          <OptimalImage src={flower1} alt="" />
+          <OptimalImage src={flower1} alt="" sizes="20vw" />
         </div>
         <div className="absolute  w-[211px] h-[199px] sm:w-[424px] sm:h-[398px]  -right-[100px] -top-[0px] -z-30">
-          <OptimalImage src={flower2} alt="" />
+          <OptimalImage src={flower2} alt="" sizes="20vw" />
         </div>
         <TitleSection content="Hình cưới nè!!!" />
       </div>

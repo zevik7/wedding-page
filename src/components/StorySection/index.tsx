@@ -62,7 +62,7 @@ function StorySection() {
           className="-z-10 object-cover"
           src={'/images/decoration/roses.jpg'}
           alt=""
-          quality={10}
+          quality={5}
         />
       </div>
       <div className="max-w-screen-lg m-auto py-10">
@@ -104,7 +104,6 @@ function StorySection() {
                     <OptimalImage
                       alt="Main carousel image"
                       src={`${story.img}`}
-                      quality={85}
                       sizes="50vw"
                     />
                   </motion.div>
@@ -141,10 +140,10 @@ function StorySection() {
                 </div>
 
                 <div className="absolute w-[211px] h-[199px] sm:w-[424px] sm:h-[398px] -left-[100px] -top-[150px] -scale-y-100 rotate-90 -z-10">
-                  <OptimalImage src={flower1} alt="" />
+                  <OptimalImage src={flower1} alt="" sizes="20vw" />
                 </div>
                 <div className="absolute  w-[211px] h-[199px] sm:w-[424px] sm:h-[398px]  -right-[100px] -top-[0px] -z-10">
-                  <OptimalImage src={flower2} alt="" />
+                  <OptimalImage src={flower2} alt="" sizes="20vw" />
                 </div>
               </div>
             </div>

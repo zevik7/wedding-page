@@ -54,7 +54,7 @@ function Carousel() {
               <OptimalImage
                 alt="Main carousel image"
                 src={selectedImage}
-                quality={100}
+                quality={80}
                 sizes="100vw"
                 className="object-cover object-top"
               />
