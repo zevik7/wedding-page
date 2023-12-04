@@ -136,7 +136,7 @@ const WishSection = () => {
                 height={100}
                 className="absolute -bottom-[50px] -right-[50px] m-auto rotate-90 w-auto h-auto"
               />
-              <div className="h-full max-h-[50vh] sm:max-h-[70vh] overflow-hidden">
+              <div className="max-h-[50vh] sm:max-h-[70vh] overflow-hidden">
                 <ul
                   ref={listRef}
                   className="h-full overflow-y-scroll"
