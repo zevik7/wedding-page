@@ -1,6 +1,5 @@
 'use client';
 
-import { format } from 'date-fns';
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useSWR from 'swr';
@@ -11,7 +10,6 @@ import NeelaBorder from '../NeelaBorder';
 import { ephesis } from '@/app/fonts';
 import useSWRMutation from 'swr/mutation';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 import FlashLoading from '../FlashLoading';
 import { motion } from 'framer-motion';
 
@@ -113,10 +111,21 @@ const WishSection = () => {
       <div ref={headerRef} className="py-12 sm:py-16">
         <TitleSection content="Lời chúc" whiteIcon className="text-white" />
 
-        <p className="text-base text-white text-center">
-          Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của chúng mình có
-          thêm một niềm hạnh phúc!
-        </p>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, bottom: 0 },
+            hidden: { opacity: 0, bottom: -200 },
+          }}
+          className="relative"
+        >
+          <p className="text-base text-white text-center">
+            Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của chúng mình có
+            thêm một niềm hạnh phúc!
+          </p>
+        </motion.div>
       </div>
 
       <div className="relative max-w-screen-lg m-auto ">

@@ -92,9 +92,20 @@ const EventSection = () => {
         >
           <div className="px-2 py-12 sm:py-16  sm:px-8 bg-primary bg-opacity-70 mx-2">
             <TitleSection content="Lễ cưới" whiteIcon className="text-white" />
-            <p className={`py-4 text-lg text-white text-center`}>
-              Tới chung vui với tụi mình nha !
-            </p>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 1 }}
+              variants={{
+                visible: { opacity: 1, bottom: 0 },
+                hidden: { opacity: 0, bottom: -200 },
+              }}
+              className="relative"
+            >
+              <p className={`py-4 text-lg text-white text-center`}>
+                Tới chung vui với tụi mình nha !
+              </p>
+            </motion.div>
 
             {renderEventCard({
               name: 'Nhà trai',
