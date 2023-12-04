@@ -109,7 +109,7 @@ const WishSection = () => {
       />
 
       <div ref={headerRef} className="py-12 sm:py-16">
-        <TitleSection content="Lời chúc" whiteIcon className="text-white" />
+        <TitleSection content="Lưu bút" whiteIcon className="text-white" />
 
         <motion.div
           initial="hidden"
