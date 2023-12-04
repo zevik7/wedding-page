@@ -93,7 +93,7 @@ const MessageSection = () => {
           className="relative h-full w-full"
         >
           <h1 className={'mt-10 sm:mt-20 text-primary text-3xl font-bold '}>
-            We are Getting Married
+            Sắp cướiiiiiiii
           </h1>
         </motion.div>
         <motion.div

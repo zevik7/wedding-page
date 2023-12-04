@@ -83,6 +83,7 @@ const AlbumSection = () => {
             <PhotoAlbumImage key={photo.imageProps.src} {...photo} />
           )}
           sizes={{ size: '100vw' }}
+          spacing={5}
           onClick={({ index: current }) => setIndex(current)}
         />
         <Lightbox
