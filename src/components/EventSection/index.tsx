@@ -97,30 +97,65 @@ const EventSection = () => {
             </p>
           </motion.div>
 
-          {renderEventCard({
-            name: 'Nhà trai',
-            date: '15h 22/12/23 (10/11 Âm lịch)',
-            location:
-              'Dốc cầu trầu hôi đường tỉnh 932, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
-            map: 'https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9',
-            image: '/images/damNoi/IMG_0764.jpg',
-          })}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 1 }}
+            variants={{
+              visible: { opacity: 1, left: 0 },
+              hidden: { opacity: 0, left: -200 },
+            }}
+            className="relative"
+          >
+            {renderEventCard({
+              name: 'Nhà trai',
+              date: '15h 22/12/23 (10/11 Âm lịch)',
+              location:
+                'Dốc cầu trầu hôi đường tỉnh 932, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
+              map: 'https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9',
+              image: '/images/damNoi/IMG_0764.jpg',
+            })}
+          </motion.div>
 
-          {renderEventCard({
-            name: 'Nhà gái',
-            date: '15h 23/12/23 (11/11 Âm lịch)',
-            location: 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
-            map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
-            image: '/images/damNoi/IMG_0595.jpg',
-          })}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 1 }}
+            variants={{
+              visible: { opacity: 1, right: 0 },
+              hidden: { opacity: 0, right: -200 },
+            }}
+            className="relative"
+          >
+            {renderEventCard({
+              name: 'Nhà gái',
+              date: '15h 23/12/23 (11/11 Âm lịch)',
+              location:
+                'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
+              map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
+              image: '/images/damNoi/IMG_0595.jpg',
+            })}
+          </motion.div>
 
-          {renderEventCard({
-            name: 'Nhà gái',
-            date: '9h 24/12/23 (12/11 Âm lịch)',
-            location: 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
-            map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
-            image: '/images/damNoi/IMG_0595.jpg',
-          })}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 1 }}
+            variants={{
+              visible: { opacity: 1, left: 0 },
+              hidden: { opacity: 0, left: -200 },
+            }}
+            className="relative"
+          >
+            {renderEventCard({
+              name: 'Nhà gái',
+              date: '9h 24/12/23 (12/11 Âm lịch)',
+              location:
+                'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
+              map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
+              image: '/images/damNoi/IMG_0595.jpg',
+            })}
+          </motion.div>
         </div>
       </div>
     </div>

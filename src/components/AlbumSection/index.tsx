@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import PhotoAlbum from 'react-photo-album';
+import PhotoAlbum, { RenderPhotoProps } from 'react-photo-album';
 import Lightbox, { SlideImage } from 'yet-another-react-lightbox';
 import PhotoAlbumImage from '../PhotoAlbumImage';
 import photosLink from './photos';
@@ -16,14 +16,18 @@ import OptimalImage from '../OptimalImage';
 import flower1 from '../../../public/images/decoration/flower-medium.svg';
 import flower2 from '../../../public/images/decoration/flower-medium2.svg';
 import TitleSection from '../TitleSection';
+import { motion } from 'framer-motion';
 
 const AlbumSection = () => {
-  let photos = photosLink.slice(0, photosLink.length / 2);
+  let photos = React.useMemo(
+    () => photosLink.slice(0, photosLink.length / 2),
+    []
+  );
   const [index, setIndex] = React.useState(-1);
   const [currentPhotos, setCurrentPhotos] = React.useState(photos.slice(0, 20));
   const ref = React.useRef<HTMLDivElement>(null);
 
-  const handleLoadMore = () => {
+  const handleLoadMore = React.useCallback(() => {
     if (currentPhotos.length >= photos.length) {
       setCurrentPhotos(photos.slice(0, 20));
       return;
@@ -37,7 +41,7 @@ const AlbumSection = () => {
     );
 
     setCurrentPhotos((prevPhotos) => [...prevPhotos, ...nextPhotos]);
-  };
+  }, [currentPhotos, photos]);
 
   const renderImage = React.useMemo(
     () => ({
@@ -63,6 +67,24 @@ const AlbumSection = () => {
     []
   );
 
+  const renderAlbumThumb = React.useCallback(
+    (photo: RenderPhotoProps) => (
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1 }}
+        variants={{
+          visible: { opacity: 1, scale: 1 },
+          hidden: { opacity: 0, scale: 0 },
+        }}
+        className="relative  h-full w-full"
+      >
+        <PhotoAlbumImage key={photo.imageProps.src} {...photo} />
+      </motion.div>
+    ),
+    []
+  );
+
   return (
     <div>
       <div className="relative py-12 sm:py-16 m-auto">
@@ -78,9 +100,7 @@ const AlbumSection = () => {
         <PhotoAlbum
           layout="columns"
           photos={currentPhotos}
-          renderPhoto={(photo) => (
-            <PhotoAlbumImage key={photo.imageProps.src} {...photo} />
-          )}
+          renderPhoto={renderAlbumThumb}
           sizes={{ size: '100vw' }}
           spacing={5}
           onClick={({ index: current }) => setIndex(current)}

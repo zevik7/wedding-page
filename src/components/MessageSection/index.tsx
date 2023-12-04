@@ -27,8 +27,8 @@ const MessageSection = () => {
             whileInView="visible"
             transition={{ duration: 1.5 }}
             variants={{
-              visible: { opacity: 1 },
-              hidden: { opacity: 0 },
+              visible: { opacity: 1, left: 0 },
+              hidden: { opacity: 0, left: -200 },
             }}
             className="relative h-full w-full"
           >
@@ -48,12 +48,12 @@ const MessageSection = () => {
             whileInView="visible"
             transition={{ duration: 1.5 }}
             variants={{
-              visible: { opacity: 1 },
-              hidden: { opacity: 0 },
+              visible: { opacity: 1, right: 0 },
+              hidden: { opacity: 0, right: -200 },
             }}
             className="relative  h-full w-full"
           >
-            <div className="relative border-4 sm:border-8 border-primary sm:ml-3 h-full">
+            <div className="relative border-4 sm:border-8 border-primary sm:ml-3 border-l-0 h-full">
               <div className="relative border-4 sm:border-8 border-white h-full">
                 <OptimalImage
                   src={'/images/file/KTIU3649.JPG'}
