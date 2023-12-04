@@ -45,7 +45,7 @@ const ThankYouSection = () => {
           alt=""
           width={200}
           height={100}
-          className="absolute w-[120px] h-full -left-[120px] -top-[0px] -rotate-[130deg]"
+          className="absolute w-[120px] h-full -left-[100px] -top-[0px] -rotate-[130deg]"
           sizes="20vw"
         />
         <OptimalImage
@@ -53,7 +53,7 @@ const ThankYouSection = () => {
           alt=""
           width={200}
           height={100}
-          className="absolute w-[120px] h-full -right-[120px] -top-[0px] rotate-[40deg]"
+          className="absolute w-[120px] h-full -right-[100px] -top-[0px] rotate-[40deg]"
           sizes="20vw"
         />
       </div>
