@@ -5,7 +5,7 @@ import { gsap, Linear } from 'gsap';
 
 const SnowFallBackground = () => {
   const MAX_SNOW = 30;
-  const MAX_SNOW_SIZE = 10;
+  const MAX_SNOW_SIZE = 15;
   const MAX_SNOW_SPEED = 2;
 
   useEffect(() => {

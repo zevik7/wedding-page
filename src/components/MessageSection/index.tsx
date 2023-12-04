@@ -27,8 +27,8 @@ const MessageSection = () => {
             whileInView="visible"
             transition={{ duration: 1.5 }}
             variants={{
-              visible: { opacity: 1, left: 0 },
-              hidden: { opacity: 0, left: -200 },
+              visible: { opacity: 1 },
+              hidden: { opacity: 0 },
             }}
             className="relative h-full w-full"
           >
@@ -48,8 +48,8 @@ const MessageSection = () => {
             whileInView="visible"
             transition={{ duration: 1.5 }}
             variants={{
-              visible: { opacity: 1, right: 0 },
-              hidden: { opacity: 0, right: -200 },
+              visible: { opacity: 1 },
+              hidden: { opacity: 0 },
             }}
             className="relative  h-full w-full"
           >
