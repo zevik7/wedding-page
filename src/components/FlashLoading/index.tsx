@@ -11,7 +11,7 @@ const FlashLoading = () => {
         opacity: 0,
       }}
       transition={{ duration: 1.5 }}
-      className={` `}
+      className="relative h-full w-full"
     >
       <div className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-white flex flex-col items-center justify-center">
         <Image

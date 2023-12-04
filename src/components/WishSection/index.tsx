@@ -13,6 +13,7 @@ import useSWRMutation from 'swr/mutation';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import FlashLoading from '../FlashLoading';
+import { motion } from 'framer-motion';
 
 export type Wish = {
   _id: string;

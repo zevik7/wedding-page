@@ -1,3 +1,4 @@
+'use client';
 import React, { memo } from 'react';
 import './style.css';
 
@@ -8,6 +9,7 @@ import { GiDiamondRing } from 'react-icons/gi';
 import { ephesis } from '@/app/fonts';
 import flower1 from '../../../public/images/decoration/flower-medium.svg';
 import flower2 from '../../../public/images/decoration/flower-medium2.svg';
+import { motion } from 'framer-motion';
 
 type Story = {
   title: string;
@@ -67,42 +69,75 @@ function StorySection() {
         <div id="timeline" className="relative">
           {stories.map((story: Story, idx: number) => (
             <div key={story.date} className="flex flex-col items-center">
-              <NeelaBorder>
-                <p className="text-2xl sm:text-3xl text-primary font-light p-4 sm:p-6">
-                  {story.date}
-                </p>
-              </NeelaBorder>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 1 }}
+                variants={{
+                  visible: { scale: 1 },
+                  hidden: { scale: 0 },
+                }}
+                className="relative"
+              >
+                <NeelaBorder>
+                  <p className="text-2xl sm:text-3xl text-primary font-light p-4 sm:p-6">
+                    {story.date}
+                  </p>
+                </NeelaBorder>
+              </motion.div>
               <div
                 className={`grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1 items-center h-full relative py-12 px-2`}
               >
                 <div className="absolute w-[1px] bg-primary top-0 bottom-[5px] left-1/2" />
 
                 <div className="relative w-[400px] aspect-[3/4] max-w-full  z-0 sm:left-20">
-                  <OptimalImage
-                    alt="Main carousel image"
-                    src={`${story.img}`}
-                    quality={100}
-                    sizes="30vw"
-                  />
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 1 }}
+                    variants={{
+                      visible: { opacity: 1, left: 0 },
+                      hidden: { opacity: 0, left: -200 },
+                    }}
+                    className="relative w-full h-full"
+                  >
+                    <OptimalImage
+                      alt="Main carousel image"
+                      src={`${story.img}`}
+                      quality={100}
+                      sizes="30vw"
+                    />
+                  </motion.div>
                 </div>
 
                 <div className="max-w-xs relative sm:left-10 justify-self-center sm:justify-self-start">
-                  <div className="bg-primary p-8 border-4 border-white">
-                    <NeelaBorder borderElementStyle="border-secondary">
-                      <div className="p-2 sm:p-4">
-                        <TitleSection
-                          content={story.title}
-                          className="text-white text-lg sm:text-xl"
-                          whiteIcon={true}
-                        />
-                        <p
-                          className={`px-2 py-4 text-sm sm:text-base text-white`}
-                        >
-                          {story.content}
-                        </p>
-                      </div>
-                    </NeelaBorder>
-                  </div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 1 }}
+                    variants={{
+                      visible: { opacity: 1, right: 0 },
+                      hidden: { opacity: 0, right: -200 },
+                    }}
+                    className="relative"
+                  >
+                    <div className="bg-primary p-8 border-4 border-white">
+                      <NeelaBorder borderElementStyle="border-secondary">
+                        <div className="p-2 sm:p-4">
+                          <TitleSection
+                            content={story.title}
+                            className="text-white text-lg sm:text-xl"
+                            whiteIcon={true}
+                          />
+                          <p
+                            className={`px-2 py-4 text-sm sm:text-base text-white`}
+                          >
+                            {story.content}
+                          </p>
+                        </div>
+                      </NeelaBorder>
+                    </div>
+                  </motion.div>
                 </div>
 
                 <div className="absolute w-[211px] h-[199px] sm:w-[424px] sm:h-[398px] -left-[100px] -top-[150px] -scale-y-100 rotate-90 -z-10">
@@ -115,16 +150,27 @@ function StorySection() {
             </div>
           ))}
 
-          <div className="flex flex-col items-center justify-center">
-            <GiDiamondRing className="text-primary text-5xl" />
-            <p
-              className={
-                'text-primary text-5xl text-center ' + ephesis.className
-              }
-            >
-              This is where our forever begins !!!
-            </p>
-          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5 }}
+            variants={{
+              visible: { scale: 1 },
+              hidden: { scale: 3 },
+            }}
+            className="relative"
+          >
+            <div className="flex flex-col items-center justify-center">
+              <GiDiamondRing className="text-primary text-5xl" />
+              <p
+                className={
+                  'text-primary text-5xl text-center ' + ephesis.className
+                }
+              >
+                This is where our forever begins !!!
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

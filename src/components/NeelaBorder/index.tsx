@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 type Props = {
   children: React.ReactNode;
@@ -25,4 +25,4 @@ const NeelaBorder = (props: Props) => {
   );
 };
 
-export default NeelaBorder;
+export default memo(NeelaBorder);

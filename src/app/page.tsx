@@ -9,6 +9,7 @@ import HeadingSection from '@/components/HeadingSection';
 import ScrollToTopButton from '@/components/ScrollToTop';
 import BackgroundMusicButton from '@/components/BackgroundMusicButton';
 import SnowFallBackground from '@/components/SnowFallBackground';
+import ProgressBar from '@/components/ProgressBar';
 
 export default function page() {
   return (
@@ -24,6 +25,7 @@ export default function page() {
       <ScrollToTopButton />
       <BackgroundMusicButton />
       <SnowFallBackground />
+      <ProgressBar />
     </main>
   );
 }
