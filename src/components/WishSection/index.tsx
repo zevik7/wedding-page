@@ -154,7 +154,7 @@ const WishSection = () => {
                     scrollbarColor: 'revert-layer',
                   }}
                 >
-                  {data &&
+                  {(data &&
                     data.length &&
                     data.map((wish: Wish, idx: number) => (
                       <li key={wish._id}>
@@ -188,7 +188,11 @@ const WishSection = () => {
                           )} */}
                         </article>
                       </li>
-                    ))}
+                    ))) || (
+                    <div className="hidden sm:block text-sm text-secondary bg-white bg-opacity-50 text-center">
+                      Chưa có lời chúc
+                    </div>
+                  )}
                 </ul>
               </div>
             </div>
