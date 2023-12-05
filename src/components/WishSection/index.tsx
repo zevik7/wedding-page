@@ -239,8 +239,7 @@ const WishSection = () => {
                     required: 'Nhập đi mà, đừng cheat :((',
                     minLength: {
                       value: 10,
-                      message:
-                        'Điền chữ lót luôn đi bạn ơi cho tụi mình dễ nhớ',
+                      message: 'Ít nhất 10 ký tự',
                     },
                     maxLength: {
                       value: 100,
@@ -263,7 +262,7 @@ const WishSection = () => {
                     required: 'Nhập đi mà, đừng cheat :((',
                     minLength: {
                       value: 10,
-                      message: 'Nhập đi mà, đừng cheat :((',
+                      message: 'Ít nhất 10 ký tự',
                     },
                     maxLength: {
                       value: 300,
