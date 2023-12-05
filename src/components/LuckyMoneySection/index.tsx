@@ -24,8 +24,8 @@ const LuckyMoneySection = () => {
           <OptimalImage
             src={'/images/decoration/bridgeQR.png'}
             alt=""
-            width={150}
-            height={150}
+            width={100}
+            height={100}
           />
         </div>
         <div className="flex flex-col items-center">
@@ -33,8 +33,8 @@ const LuckyMoneySection = () => {
           <OptimalImage
             src={'/images/decoration/groomQR.png'}
             alt=""
-            width={150}
-            height={150}
+            width={100}
+            height={100}
           />
         </div>
       </div>
