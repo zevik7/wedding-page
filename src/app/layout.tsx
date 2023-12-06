@@ -3,6 +3,7 @@ import './globals.css';
 import { merienda } from './fonts';
 import { Suspense } from 'react';
 import Loading from './loading';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Phú & Vy',
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={merienda.className}>
         <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Analytics />
       </body>
     </html>
   );
