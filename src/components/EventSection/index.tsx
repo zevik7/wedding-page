@@ -129,7 +129,7 @@ const EventSection = () => {
           >
             {renderEventCard({
               name: 'Nhà trai',
-              date: '15h 22/12/23 (10/11 Âm lịch)',
+              date: 'Từ 15h chơi tới sáng 22/12/23 (10/11 Âm lịch)',
               location:
                 'Dốc cầu trầu hôi đường tỉnh 932, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
               map: 'https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9',
