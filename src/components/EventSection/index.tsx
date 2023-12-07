@@ -169,7 +169,7 @@ const EventSection = () => {
           >
             {renderEventCard({
               name: 'Nhà gái',
-              date: '9h 24/12/23 (12/11 Âm lịch)',
+              date: '8h 24/12/23 (12/11 Âm lịch)',
               location:
                 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
               map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
