@@ -238,8 +238,8 @@ const WishSection = () => {
                   {...register('userName', {
                     required: 'Nhập đi mà, đừng cheat :((',
                     minLength: {
-                      value: 10,
-                      message: 'Ít nhất 10 ký tự',
+                      value: 5,
+                      message: 'Ít nhất 5 ký tự',
                     },
                     maxLength: {
                       value: 100,
@@ -261,8 +261,8 @@ const WishSection = () => {
                   {...register('comment', {
                     required: 'Nhập đi mà, đừng cheat :((',
                     minLength: {
-                      value: 10,
-                      message: 'Ít nhất 10 ký tự',
+                      value: 5,
+                      message: 'Ít nhất 5 ký tự',
                     },
                     maxLength: {
                       value: 300,
