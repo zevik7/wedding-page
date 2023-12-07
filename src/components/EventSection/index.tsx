@@ -108,12 +108,12 @@ const EventSection = () => {
             className="relative"
           >
             {renderEventCard({
-              name: 'Nhà trai',
+              name: 'Nhóm họ nhà trai',
               date: '15h 21/12/23 (9/11 Âm lịch)',
               location:
                 'Dốc cầu trầu hôi đường tỉnh 932, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
               map: 'https://maps.app.goo.gl/uPr5xJmCpgQTHyHu9',
-              image: '/images/damNoi/IMG_0764.jpg',
+              image: '/images/damNoi/IMG_0713.jpg',
             })}
           </motion.div>
 
@@ -153,7 +153,7 @@ const EventSection = () => {
               location:
                 'Ấp Nhơn Thuận 1B, Nhơn Nghĩa A, Châu Thành A, Hậu Giang',
               map: 'https://maps.app.goo.gl/dvXkTXYXXRCqkLiaA',
-              image: '/images/damNoi/IMG_0595.jpg',
+              image: '/images/damNoi/IMG_0585.jpg',
             })}
           </motion.div>
 
