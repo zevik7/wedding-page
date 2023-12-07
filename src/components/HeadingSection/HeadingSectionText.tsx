@@ -27,7 +27,7 @@ const HeadingSectionText = () => {
           Thiên Phú & Phương Vy
         </h1>
         <p className="mb-2 text-center text-base">
-          Ngày 22-23-24 tháng 11 2023
+          Ngày 22-23-24 tháng 12 2023
         </p>
         <p className="mb-5 text-center text-sm">10-11-12 tháng 11 âm lịch</p>
         <div className="flex justify-center">
