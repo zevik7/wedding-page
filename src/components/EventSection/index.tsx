@@ -57,10 +57,12 @@ const EventSection = () => {
             </div>
             <div className="col-span-full m-auto flex justify-end">
               <Link
-                className="py-2 px-4 bg-white text-primary text-sm font-bold border border-primary"
+                className="py-2 px-4 bg-white text-primary text-sm font-bold border border-primary text-center"
                 href={map}
               >
-                Xem bản đồ (xuất phát từ ĐHCT)
+                Xem bản đồ
+                <br />
+                (xuất phát từ ĐHCT)
               </Link>
             </div>
           </div>

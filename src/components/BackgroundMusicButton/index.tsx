@@ -64,24 +64,33 @@ const BackgroundMusicButton = () => {
   };
 
   return (
-    <div className="fixed bottom-5 left-5 z-50">
-      <button
-        onClick={() => {
-          if (!isPlaying) {
-            playRandomTrack();
-          } else {
-            togglePlay();
-          }
-        }}
-        className="p-2 bg-red-400 rounded-full border-base-100 outline-none"
-      >
-        {isLoading && <TbLoader color="#fff" />}
-        {!isLoading &&
-          (isPlaying ? <TbMusicOff color="#fff" /> : <TbMusic color="#fff" />)}
-        <div className="waves wave-1"></div>
-        <div className="waves wave-2"></div>
-        <div className="waves wave-3"></div>
-      </button>
+    <div className="fixed bottom-5 left-5 z-50 flex items-center">
+      <div className="relative inline-block">
+        <button
+          onClick={() => {
+            if (!isPlaying) {
+              playRandomTrack();
+            } else {
+              togglePlay();
+            }
+          }}
+          className="p-2 bg-red-400 rounded-full border-base-100 outline-none"
+        >
+          {isLoading && <TbLoader color="#fff" />}
+          {!isLoading &&
+            (isPlaying ? (
+              <TbMusicOff color="#fff" />
+            ) : (
+              <TbMusic color="#fff" />
+            ))}
+          <div className="waves wave-1"></div>
+          <div className="waves wave-2"></div>
+          <div className="waves wave-3"></div>
+        </button>
+      </div>
+      <p className="text-sm text-red-400 ml-2 drop-shadow-[1px_1px_0px_rgba(255,255,255,1)]">
+        {isPlaying ? '' : 'Nhấn để phát'}
+      </p>
     </div>
   );
 };
